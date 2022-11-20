@@ -230,14 +230,11 @@ function doComment() {
   });
 }
 
-onMounted(() => {
-  clear();
-  sl.callback(() => {
-    page.value++;
-    loadList();
-  });
-  load();
+sl.callback(() => {
+  page.value++;
+  loadList();
 });
+load();
 
 onBeforeRouteUpdate((to, from, next) => {
   clear();

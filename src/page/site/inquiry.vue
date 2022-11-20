@@ -7,7 +7,3 @@
 <script setup lang="ts">
 import Board from "../../domain/board/Board.vue";
 </script>
-
-<style scoped>
-
-</style>

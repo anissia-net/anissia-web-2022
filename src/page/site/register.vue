@@ -115,7 +115,3 @@ function validationRegister(token: string) {
 }
 
 </script>
-
-<style scoped>
-
-</style>

@@ -180,14 +180,12 @@ function doDelete(post: Post) {
   }
 }
 
-onMounted(() => {
-  init();
-  sl.callback(() => {
-    page.value++;
-    loadList();
-  });
-  load();
+init();
+sl.callback(() => {
+  page.value++;
+  loadList();
 });
+load();
 
 onBeforeRouteUpdate((to, from, next) => {
   clear();

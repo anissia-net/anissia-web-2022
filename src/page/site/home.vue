@@ -83,11 +83,9 @@ function resize(event: Event) {
   applyResponsive();
 }
 
-onMounted(() => {
-  applyResponsive();
-  boardRemote.getRecentHome(data => recentBoardData.value = data);
-  addEventListener("resize", resize, true);
-});
+boardRemote.getRecentHome(data => recentBoardData.value = data);
+applyResponsive();
+addEventListener("resize", resize, true);
 
 onUnmounted(() => {
   removeEventListener("resize", resize, true);
@@ -98,5 +96,4 @@ onUnmounted(() => {
 <style scoped>
 :global(.anissia-home-mode-mob .anissia-home-reduce-8:nth-child( n + 9 )) { display: none }
 :global(.anissia-home-mode-mob .anissia-home-reduce-10:nth-child( n + 11 )) { display: none }
-
 </style>

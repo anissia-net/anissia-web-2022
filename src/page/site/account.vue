@@ -77,9 +77,7 @@
 </template>
 
 <script setup lang="ts">
-
-import {onMounted, ref} from "vue";
-import {sessionStore} from "../../domain/session/sessionStore";
+import {ref} from "vue";
 import accountRemote from "../../domain/account/remote/accountRemote";
 import {Account} from "../../domain/account/Account";
 
@@ -122,12 +120,5 @@ function updatePassword() {
   });
 }
 
-onMounted(() => {
-  load();
-});
-
+load();
 </script>
-
-<style scoped>
-
-</style>

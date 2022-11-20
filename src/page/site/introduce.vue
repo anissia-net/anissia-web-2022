@@ -207,10 +207,3 @@ let gallery = ref([
 ]);
 
 </script>
-
-<style scoped>
-
-
-
-
-</style>

@@ -17,20 +17,12 @@
 </template>
 
 <script setup lang="ts">
-import {onMounted, Ref, ref} from "vue";
+import {Ref, ref} from "vue";
 import animeRemote from "./remote/animeRemote";
 import AnimeCaption from "./AnimeCaption";
 
 const list = ref([]) as Ref<AnimeCaption[]>;
-
-function load() {
-  animeRemote.getCaptionRecent(data => list.value = data);
-}
-
-onMounted(() => {
-  load();
-});
-
+animeRemote.getCaptionRecent(data => list.value = data);
 </script>
 
 <style>

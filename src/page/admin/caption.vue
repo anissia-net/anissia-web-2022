@@ -103,14 +103,12 @@ function doDelete(caption: AnimeCaption) {
   }
 }
 
-onMounted(() => {
-  clear(new Locate());
-  sl.callback(() => {
-    page.value++;
-    load();
-  });
+clear(new Locate());
+sl.callback(() => {
+  page.value++;
   load();
 });
+load();
 
 onBeforeRouteUpdate((to, from, next) => {
   clear(new Locate(to.fullPath));

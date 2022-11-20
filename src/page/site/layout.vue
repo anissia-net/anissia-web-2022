@@ -104,9 +104,7 @@ function doCloseHeaderMenu(event: Event) {
   }
 }
 
-onMounted(() => {
-  sessionService.amendPathBySession(route.fullPath, router);
-});
+sessionService.amendPathBySession(route.fullPath, router);
 
 onBeforeRouteUpdate((to, from, next) => {
   sessionService.amendPathBySession(to.fullPath, router, next);

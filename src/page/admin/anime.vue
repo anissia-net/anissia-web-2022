@@ -453,15 +453,13 @@ function doSave() {
   }
 }
 
-onMounted(() => {
-  init();
-  clear(new Locate());
-  sl.callback(() => {
-    page.value++;
-    loadList();
-  });
-  load();
+init();
+clear(new Locate());
+sl.callback(() => {
+  page.value++;
+  loadList();
 });
+load();
 
 onBeforeRouteUpdate((to, from, next) => {
   clear(new Locate(to.fullPath));
@@ -473,7 +471,3 @@ onUnmounted(() => {
   sl.destroy();
 });
 </script>
-
-<style scoped>
-
-</style>

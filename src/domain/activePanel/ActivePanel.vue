@@ -58,7 +58,7 @@
 </template>
 
 <script setup lang="ts">
-import {nextTick, onMounted, Ref, ref} from "vue";
+import {nextTick, onMounted, onUnmounted, Ref, ref} from "vue";
 import scrollLoader from "../../common/ScrollLoader";
 import activePanelRemote from "./remote/activePanelRemote";
 import PageData from "../../common/PageData";
@@ -116,16 +116,18 @@ function doQuery() {
   });
 }
 
-onMounted(() => {
-  isAdminMode.value = props.mode == 'admin';
-  if (isAdminMode.value) {
-    sl.callback(() => {
-      page.value++;
-      load();
-    });
-    loadTranslatorApplyCount();
-  }
-  load();
+isAdminMode.value = props.mode == 'admin';
+if (isAdminMode.value) {
+  sl.callback(() => {
+    page.value++;
+    load();
+  });
+  loadTranslatorApplyCount();
+}
+load();
+
+onUnmounted(() => {
+  sl.destroy();
 });
 
 </script>

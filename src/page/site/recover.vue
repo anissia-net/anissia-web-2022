@@ -166,7 +166,3 @@ function recoverEmail() {
 
 
 </script>
-
-<style scoped>
-
-</style>

@@ -56,16 +56,14 @@ function loadList() {
   });
 }
 
-onMounted(() => {
-  sl.callback(() => {
-    page.value++;
-    loadList();
-  });
+sl.callback(() => {
+  page.value++;
   loadList();
+});
+loadList();
+
+onUnmounted(() => {
+  sl.destroy();
 });
 
 </script>
-
-<style scoped>
-
-</style>

@@ -63,7 +63,3 @@ function doLogin() {
 }
 
 </script>
-
-<style scoped>
-
-</style>

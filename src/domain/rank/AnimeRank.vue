@@ -21,8 +21,7 @@
 </template>
 
 <script setup lang="ts">
-
-import {onMounted, Ref, ref} from "vue";
+import {Ref, ref} from "vue";
 import animeRemote from "../anime/remote/animeRemote";
 import {AnimeRankItem} from "./AnimeRankItem";
 
@@ -34,10 +33,5 @@ function load(_period: string) {
   animeRemote.getRank(_period, data => list.value = data);
 }
 
-onMounted(() => load("week"));
-
+load("week");
 </script>
-
-<style>
-
-</style>

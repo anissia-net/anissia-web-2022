@@ -9,7 +9,3 @@
 <script setup lang="ts">
 import ActivePanel from "../../domain/activePanel/ActivePanel.vue";
 </script>
-
-<style scoped>
-
-</style>

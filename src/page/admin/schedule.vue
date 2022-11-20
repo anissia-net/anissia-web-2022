@@ -58,7 +58,3 @@ function getAnimeList(week: number): void {
 getAnimeList(new Date().getDay());
 
 </script>
-
-<style scoped>
-
-</style>

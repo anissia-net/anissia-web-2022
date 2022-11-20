@@ -127,7 +127,6 @@
 </template>
 
 <script setup lang="ts">
-
 import {nextTick, onMounted, onUnmounted, Ref, ref} from "vue";
 import PageData from "../../common/PageData";
 import Anime from "../../domain/anime/Anime";
@@ -239,13 +238,11 @@ function getNowSearchedQuery() {
   return new Locate().getParameter('q', '');
 }
 
-onMounted(() => {
-  sl.callback(() => {
-    page.value++;
-    loadList();
-  });
-  load();
+sl.callback(() => {
+  page.value++;
+  loadList();
 });
+load();
 
 onBeforeRouteUpdate((to, from, next) => {
   load(new Locate(to.fullPath));
@@ -255,10 +252,4 @@ onBeforeRouteUpdate((to, from, next) => {
 onUnmounted(() => {
   sl.destroy();
 });
-
-
 </script>
-
-<style scoped>
-
-</style>
