@@ -123,9 +123,9 @@ onMounted(() => {
       page.value++;
       load();
     });
+    loadTranslatorApplyCount();
   }
   load();
-  loadTranslatorApplyCount();
 });
 
 </script>
