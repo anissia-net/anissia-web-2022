@@ -58,7 +58,7 @@
 </template>
 
 <script setup lang="ts">
-import {nextTick, onMounted, onUnmounted, Ref, ref} from "vue";
+import {nextTick, onUnmounted, Ref, ref} from "vue";
 import scrollLoader from "../../common/ScrollLoader";
 import activePanelRemote from "./remote/activePanelRemote";
 import PageData from "../../common/PageData";

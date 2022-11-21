@@ -60,7 +60,7 @@
 
 <script setup lang="ts">
 
-import {onMounted, onUnmounted, ref} from "vue";
+import {onUnmounted, ref} from "vue";
 import Rank from "../../domain/rank/AnimeRank.vue";
 import RecentCaption from "../../domain/anime/RecentCaption.vue";
 import ActivePanel from "../../domain/activePanel/ActivePanel.vue";

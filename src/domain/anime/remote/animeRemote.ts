@@ -1,4 +1,3 @@
-
 import AnimeCaption from "../AnimeCaption";
 import PageData from "../../../common/PageData";
 import AnimeAutocorrect from "../AnimeAutocorrect";

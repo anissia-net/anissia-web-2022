@@ -7,5 +7,4 @@
 </template>
 
 <script setup lang="ts">
-import ActivePanel from "../../domain/activePanel/ActivePanel.vue";
-</script>
+import ActivePanel from "../../domain/activePanel/ActivePanel.vue";</script>

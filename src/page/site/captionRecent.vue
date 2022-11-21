@@ -25,13 +25,7 @@
 
 <script setup lang="ts">
 
-import {nextTick, onMounted, onUnmounted, Ref, ref} from "vue";
-import Rank from "../../domain/rank/AnimeRank.vue";
-import RecentCaption from "../../domain/anime/RecentCaption.vue";
-import ActivePanel from "../../domain/activePanel/ActivePanel.vue";
-import RecentBoard from "../../domain/board/RecentBoard.vue";
-import boardRemote from "../../domain/board/remote/boardRemote";
-import {RecentBoardData} from "../../domain/board/RecentBoardData";
+import {nextTick, onUnmounted, Ref, ref} from "vue";
 import AnimeCaption from "../../domain/anime/AnimeCaption";
 import animeRemote from "../../domain/anime/remote/animeRemote";
 import PageData from "../../common/PageData";

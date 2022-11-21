@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import {nextTick, onMounted, Ref, ref} from "vue";
+import {nextTick, Ref, ref} from "vue";
 import scrollLoader from "../../common/ScrollLoader";
 import PageData from "../../common/PageData";
 import animeRemote from "../../domain/anime/remote/animeRemote";

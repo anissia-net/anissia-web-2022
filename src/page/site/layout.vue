@@ -67,7 +67,7 @@
 
 <script setup lang="ts">
 
-import {computed, onMounted, onUnmounted, ref} from "vue";
+import {computed, onUnmounted, ref} from "vue";
 import theme from "../../common/theme";
 import anissia from "../../common/anissia";
 import {sessionStore} from "../../domain/session/sessionStore";

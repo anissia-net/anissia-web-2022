@@ -5,5 +5,4 @@
 </template>
 
 <script setup lang="ts">
-import Board from "../../domain/board/Board.vue";
-</script>
+import Board from "../../domain/board/Board.vue";</script>

@@ -119,7 +119,7 @@ import anissia_4_jpg from './introduce/anissia.4.jpg';
 import anissia_5_jpg from './introduce/anissia.5.jpg';
 import anissia_6_jpg from './introduce/anissia.6.jpg';
 
-import {onBeforeMount, ref} from "vue";
+import {ref} from "vue";
 import {SiteHistory} from "./introduce/SiteHistory";
 import {SiteMember} from "./introduce/SiteMember";
 

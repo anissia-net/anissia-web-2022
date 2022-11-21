@@ -1,4 +1,4 @@
-import { sessionStore } from "../sessionStore";
+import {sessionStore} from "../sessionStore";
 import Session from "../Session";
 import sessionRemote from "./sessionRemote";
 import ajax from "../../../common/ajax";

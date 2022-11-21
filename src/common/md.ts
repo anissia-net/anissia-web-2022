@@ -6,7 +6,6 @@ import MarkdownIt from "markdown-it/dist/markdown-it.min.js";
 import TextAreaSelector from "./TextAreaSelector";
 
 
-
 class Md {
   public md = MarkdownIt({
     html:         false,

@@ -127,7 +127,7 @@
 </template>
 
 <script setup lang="ts">
-import {nextTick, onMounted, onUnmounted, Ref, ref} from "vue";
+import {nextTick, onUnmounted, Ref, ref} from "vue";
 import PageData from "../../common/PageData";
 import Anime from "../../domain/anime/Anime";
 import animeRemote from "../../domain/anime/remote/animeRemote";

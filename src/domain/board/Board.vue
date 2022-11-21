@@ -67,7 +67,7 @@
 </template>
 
 <script setup lang="ts">
-import {computed, nextTick, onMounted, onUnmounted, Ref, ref} from "vue";
+import {computed, nextTick, onUnmounted, Ref, ref} from "vue";
 import PageData from "../../common/PageData";
 import {onBeforeRouteUpdate, useRouter} from "vue-router";
 import scrollLoader from "../../common/ScrollLoader";

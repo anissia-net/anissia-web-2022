@@ -288,7 +288,7 @@
 </template>
 
 <script setup lang="ts">
-import {computed, nextTick, onMounted, onUnmounted, ref} from "vue";
+import {computed, onMounted, onUnmounted, ref} from "vue";
 import ColorPicker from "../../domain/colorPicker/ColorPicker.vue";
 import {DateFormat} from "../../common/DateFormat";
 import animeRemote from "../../domain/anime/remote/animeRemote";
