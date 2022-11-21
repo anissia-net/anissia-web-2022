@@ -1,7 +1,7 @@
 <template>
 
 
-  <section class="flex items-center min-h-[500px] h-[80vh]">
+  <section class="flex items-center min-h-[500px] h-[80vh]" :class="({'opacity-0': !show})">
     <div class="mx-auto">
       <div class="mb-6 text-2xl text-center font-semibold text-gray-900 dark:text-white">
         로그인
@@ -50,16 +50,22 @@ import sessionService from "../../domain/session/remote/sessionService";
 import {Locate} from "../../common/Locate";
 import {useRouter} from "vue-router";
 
-let email = ref('');
-let password = ref('');
-let tokenLogin = ref(false);
-let router = useRouter();
+const email = ref('');
+const password = ref('');
+const tokenLogin = ref(false);
+const router = useRouter();
+const path = new Locate().getParameter('path', '');
+const show = ref(path == '');
 
 function doLogin() {
   sessionService.login(email.value, password.value, tokenLogin.value ? 1 : 0, () => {
-    const path = new Locate().getParameter('path', '');
     router.push(path && path.startsWith('/') ? path : '/');
   });
 }
+
+if (!show.value) {
+  setTimeout(() => show.value = true, 200);
+}
+
 
 </script>
