@@ -4,7 +4,7 @@
     <div v-if="post.root">
       <input type="text" v-model="topic" placeholder="주제" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:border-blue-600 block w-full p-2.5 dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-zinc-300">
     </div>
-    <div class="h-[40px] mt-3 mb-1">
+    <div class="min-h-[40px] mt-3 mb-1">
       <i act="h1" @click="tool" class="fa-solid fa-heading inline-block text-center !leading-[40px] w-[36px] h-[40px] cursor-pointer text-sm hover:text-red-700 dark:hover:text-red-500"></i>
       <i act="b" @click="tool" class="fa-solid fa-bold inline-block text-center !leading-[40px] w-[36px] h-[40px] cursor-pointer text-sm hover:text-red-700 dark:hover:text-red-500"></i>
       <i act="i" @click="tool" class="fa-solid fa-italic inline-block text-center !leading-[40px] w-[36px] h-[40px] cursor-pointer text-sm hover:text-red-700 dark:hover:text-red-500"></i>
@@ -15,6 +15,7 @@
       <i act="ul" @click="tool" class="fa-solid fa-list-ul inline-block text-center !leading-[40px] w-[36px] h-[40px] cursor-pointer text-sm hover:text-red-700 dark:hover:text-red-500"></i>
       <i act="table" @click="tool" class="fa-solid fa-table-cells-large inline-block text-center !leading-[40px] w-[36px] h-[40px] cursor-pointer text-sm hover:text-red-700 dark:hover:text-red-500"></i>
       <i act="link" @click="tool" class="fa-solid fa-link inline-block text-center !leading-[40px] w-[36px] h-[40px] cursor-pointer text-sm hover:text-red-700 dark:hover:text-red-500"></i>
+      <i act="image" @click="tool" class="fa-regular fa-image inline-block text-center !leading-[40px] w-[36px] h-[40px] cursor-pointer text-sm hover:text-red-700 dark:hover:text-red-500"></i>
       <i act="code" @click="tool" class="fa-solid fa-code inline-block text-center !leading-[40px] w-[36px] h-[40px] cursor-pointer text-sm hover:text-red-700 dark:hover:text-red-500"></i>
       <i act="mode" @click="tool" class="fa-solid fa-table-columns inline-block text-center !leading-[40px] w-[36px] h-[40px] cursor-pointer text-sm hover:text-red-700 dark:hover:text-red-500"></i>
     </div>
@@ -153,6 +154,7 @@ function tool(event: MouseEvent) {
     case 'ol': ts.apply(e => e.setCursor('\n1. ', e.select || '순서목차')); break;
     case 'hr': ts.apply(e => e.setCursor('\n\n---\n')); break;
     case 'table': ts.apply(e => e.setCursor('\n\n|제목|제목|제목|\n|---|---|---|\n|내용|내용|내용|\n', '')); break;
+    case 'image': ts.apply(e => e.setCursor('![링크](https://외부이미지주소예시.png)', null)); break;
     case 'link':
       ts.apply(e => {
         if ((/^https?:\/\//).test(e.select) || (/^([a-z\d\-]+\.)+[a-z\d]{2,}(\/|$)/i).test(e.select)) {

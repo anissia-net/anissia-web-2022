@@ -67,13 +67,14 @@
 
 <script setup lang="ts">
 
-import {computed, onMounted, ref} from "vue";
+import {computed, onMounted, onUnmounted, ref} from "vue";
 import theme from "../../common/theme";
 import anissia from "../../common/anissia";
 import {sessionStore} from "../../domain/session/sessionStore";
 import {onBeforeRouteUpdate, useRoute, useRouter} from "vue-router";
 import sessionService from "../../domain/session/remote/sessionService";
 import '../../common/md.pcss';
+import image_error from "./layout/image_error.svg";
 
 const router = useRouter();
 const route = useRoute();
@@ -95,6 +96,17 @@ function isNotAdmin() {
   return !location.pathname.startsWith('/admin');
 }
 
+function imageLoadError(e: Event) {
+  if (((e.target || {}) as HTMLElement).tagName == 'IMG') {
+    const img = e.target as HTMLImageElement;
+    if (!img.onerror) {
+      img.src = image_error;
+      img.title = '이미지를 찾을 수 없습니다.';
+    }
+  }
+  return true;
+}
+
 function doCloseHeaderMenu(event: Event) {
   if (onHeaderMenu.value == true) {
     const closet = (event.target as HTMLElement).closest(".pop-close,.pop-not-close");
@@ -105,9 +117,14 @@ function doCloseHeaderMenu(event: Event) {
 }
 
 sessionService.amendPathBySession(route.fullPath, router);
+document.addEventListener('error', imageLoadError, true);
 
 onBeforeRouteUpdate((to, from, next) => {
   sessionService.amendPathBySession(to.fullPath, router, next);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('error', imageLoadError, true);
 });
 
 </script>

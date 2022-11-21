@@ -174,7 +174,7 @@
       <div v-if="autocorrectOn && autocorrect.length">
         <ul class="autocorrect-list bg-white text-sky-600 dark:bg-zinc-900 dark:text-sky-300 mt-2 py-1 rounded-md border border-gray-300 dark:border-zinc-600 font-light">
           <li v-for="(node, i) in autocorrect" :class="autocorrectIndex != i ? 'grayscale-[100%]' : ''" class=" pl-8 pr-2 py-1 relative cursor-pointer" @mouseover="autocorrectIndex = i">
-            <router-link :to="`/anime?animeNo=${node.key}`" class="block">
+            <router-link :to="`/admin/anime?animeNo=${node.key}`" class="block">
               <i :class="autocorrectIndex != i ? 'opacity-[0%]' : ''" class="fa-solid fa-arrow-right-long absolute w-4 h-4 left-2 top-2"></i>
               <span v-html="node.hl"></span>
             </router-link>
