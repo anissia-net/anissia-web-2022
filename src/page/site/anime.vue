@@ -136,17 +136,17 @@ import {onBeforeRouteUpdate, useRouter} from "vue-router";
 import {Locate} from "../../common/Locate";
 import scrollLoader from "../../common/ScrollLoader";
 
-let list = ref(PageData.empty()) as Ref<PageData<Anime>>;
-let anime = ref(null) as Ref<Anime|null>;
+const list = ref(PageData.empty()) as Ref<PageData<Anime>>;
+const anime = ref(null) as Ref<Anime|null>;
 let lastAnimeNo = -1;
-let page = ref(0);
-let query = ref<string>(new Locate().getParameter('q', '') as string);
-let autocorrect = ref([]) as Ref<AnimeAutocorrect[]>;
-let autocorrectOn = ref(false);
-let autocorrectIndex = ref(-1);
+const page = ref(0);
+const query = ref<string>(new Locate().getParameter('q', '') as string);
+const autocorrect = ref([]) as Ref<AnimeAutocorrect[]>;
+const autocorrectOn = ref(false);
+const autocorrectIndex = ref(-1);
 let autocorrectQuery = '';
-let router = useRouter();
-let sl = scrollLoader();
+const router = useRouter();
+const sl = scrollLoader();
 
 function load(locate: Locate = new Locate()) {
   autocorrectOn.value = false;

@@ -83,14 +83,14 @@ import {Account} from "../../domain/account/Account";
 
 const account = ref(new Account());
 
-let mode = ref('none');
+const mode = ref('none');
 
-let editNickname = ref('');
-let editNicknamePassword = ref('');
+const editNickname = ref('');
+const editNicknamePassword = ref('');
 
-let editPrevPassword = ref('');
-let editPassword = ref('');
-let editPasswordConfirm = ref('');
+const editPrevPassword = ref('');
+const editPassword = ref('');
+const editPasswordConfirm = ref('');
 
 function load() {
   mode.value = 'none';

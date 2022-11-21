@@ -66,13 +66,13 @@ import Anime from "../../domain/anime/Anime";
 import anissia from "../../common/anissia";
 import animeRemote from "../../domain/anime/remote/animeRemote";
 
-let weekList = ref(['日', '月', '火', '水', '木', '金', '土', '外', '新']);
-let weekNow = ref(-1);
-let isWeb = ref(true);
-let animeList = ref([]) as Ref<Anime[]>;
-let animeNow = ref(null) as Ref<Anime|null>;
-let captionList = ref([]) as Ref<AnimeCaption[]>;
-let colorMode = ref('light');
+const weekList = ref(['日', '月', '火', '水', '木', '金', '土', '外', '新']);
+const weekNow = ref(-1);
+const isWeb = ref(true);
+const animeList = ref([]) as Ref<Anime[]>;
+const animeNow = ref(null) as Ref<Anime|null>;
+const captionList = ref([]) as Ref<AnimeCaption[]>;
+const colorMode = ref('light');
 
 // method
 function isPureWeek() {

@@ -125,17 +125,17 @@ import {SiteMember} from "./introduce/SiteMember";
 
 const nowYear = new Date().getFullYear();
 
-let adminMembers = ref([
+const adminMembers = ref([
   new SiteMember('또_탈퇴된코란', `2009 ~ ${nowYear}`, [`기획`, `관리`, `애니시아 서버 제공`, `블로그||https://coran.co.kr`, `트위터||https://twitter.com/c0ran`]),
   new SiteMember('Leon', `2015 ~ ${nowYear}`, [`관리`]),
 ]) as unknown as SiteMember[];
 
-let supportMembers = ref([
+const supportMembers = ref([
   new SiteMember('박용서', `2007 ~ 2013<br/>개발지원 2013 ~ ${nowYear}`, [`개발총괄`, `애니편성표`, `애니시아`, `시스템`, `API`, `디자인`, `기획`, `가리사니||https://gs.saro.me`, `GITHUB||https://github.com/ac-saro` ,`페이스북||https://www.facebook.com/j.saro.co`]),
   new SiteMember('매디', `2007 ~ 2013<br/>개발지원 2013 ~ ${nowYear}`, [`일러스트총괄`, `아이콘`, `애니편성표`, `블로그||https://blog.naver.com/ehozil`]),
 ]) as unknown as SiteMember[];
 
-let prevMembers = ref([
+const prevMembers = ref([
   new SiteMember('UTPasiirs', '2015 ~ 2018', [`관리`]),
   new SiteMember('ORS (단체)', '2009 ~ 2011', [`라디오편성표`]),
   new SiteMember('메티오', '2009 ~ 2010', [`일러스트`, `디자인`, `Anissia 마크`]),
@@ -145,7 +145,7 @@ let prevMembers = ref([
   new SiteMember('랜스', '2007 ~ 2009', [`애니편성표 프로그램`, `블로그||http://blog.lancekun.com/tc/`]),
 ]) as unknown as SiteMember[];
 
-let siteHistory = ref([
+const siteHistory = ref([
   new SiteHistory(`2022-09-20`, `2022 디자인 리뉴얼 (개발:가리사니 개발자공간)`, `/notice?topicNo=93`),
   new SiteHistory(`2022-09-20`, `공유기 교체 (간헐적 서버 다운 원인)`, `/notice?topicNo=88`),
   new SiteHistory(`2021-02-08`, `2020 리뉴얼 (개발:가리사니 개발자공간)`, `/notice?topicNo=27`),
@@ -188,7 +188,7 @@ let siteHistory = ref([
   new SiteHistory(`2007-02-22`, `클라비스 -> 테라시아 이름변경 후 도메인(terassia.com) 구입 서비스 개시`),
 ]) as unknown as SiteHistory[];
 
-let gallery = ref([
+const gallery = ref([
   { src: timetable_1_jpg, file: 'timetable.1.jpg', title: `최초의 애니편성표 [2009년]`, desc: `애니시간표 -> 애니편성표 (기존 애니시간표는 자료소실)` },
   { src: timetable_2_jpg, file: 'timetable.2.jpg', title: `두번째 애니편성표 [2009년]`, desc: `이 디자인을 선호하는 사람이 많아 현재도 제공중` },
   { src: timetable_3_jpg, file: 'timetable.3.jpg', title: `세번째 애니편성표 [2015년]`, desc: `2020년에 다크모드가 추가됨 (정확히는 네번째로 2013년 부터 2015년 까지 존재한 편성표가 있음)` },

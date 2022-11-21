@@ -37,5 +37,5 @@
 <script setup lang="ts">
 import anissia from "../../common/anissia";
 
-let url = anissia.url
+const url = anissia.url
 </script>

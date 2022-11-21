@@ -294,7 +294,7 @@ import {DateFormat} from "../../common/DateFormat";
 import animeRemote from "../../domain/anime/remote/animeRemote";
 
 // anime schedule data
-let asd = ref({
+const asd = ref({
   // TYPE - html, img
   type: 'html',
   // HTML - color - light mode
@@ -320,18 +320,18 @@ let asd = ref({
   imgDataList: [] as string[],
   imgDataYmd: new DateFormat().format("yyyy년 MM월 dd일"),
 });
-let maxWidth = ref(0);
-let containerRef = ref(null) as any;
-let htmlFrameRef = ref(null) as any;
-let htmlMaxWidth = computed(() => Math.min(maxWidth.value, asd.value.htmlWidth));
-let htmlCode = computed(() => `<iframe src="${location.origin + '/schedule/2015#' + htmlSrc.value}" width="${asd.value.htmlWidth}" height="${asd.value.htmlHeight}" frameborder="0"></iframe>`);
-let htmlSrc = computed(() => asd.value.htmlBgLight + asd.value.htmlTitleBgLight + asd.value.htmlTitleLight + asd.value.htmlNavBgLight + asd.value.htmlNavLight + asd.value.htmlNavActBgLight +
+const maxWidth = ref(0);
+const containerRef = ref(null) as any;
+const htmlFrameRef = ref(null) as any;
+const htmlMaxWidth = computed(() => Math.min(maxWidth.value, asd.value.htmlWidth));
+const htmlCode = computed(() => `<iframe src="${location.origin + '/schedule/2015#' + htmlSrc.value}" width="${asd.value.htmlWidth}" height="${asd.value.htmlHeight}" frameborder="0"></iframe>`);
+const htmlSrc = computed(() => asd.value.htmlBgLight + asd.value.htmlTitleBgLight + asd.value.htmlTitleLight + asd.value.htmlNavBgLight + asd.value.htmlNavLight + asd.value.htmlNavActBgLight +
     asd.value.htmlNavActLight + asd.value.htmlListBgLight + asd.value.htmlListLight + asd.value.htmlListActBgLight + asd.value.htmlListActLight + asd.value.htmlPrefixLight +
     asd.value.htmlBgDark + asd.value.htmlTitleBgDark + asd.value.htmlTitleDark + asd.value.htmlNavBgDark + asd.value.htmlNavDark + asd.value.htmlNavActBgDark +
     asd.value.htmlNavActDark + asd.value.htmlListBgDark + asd.value.htmlListDark + asd.value.htmlListActBgDark + asd.value.htmlListActDark + asd.value.htmlPrefixDark);
-let imgMaxWidth = computed(() => Math.min(maxWidth.value, asd.value.imgWidth));
-let imgHeight = computed(() => 50 + (asd.value.imgSize * 20));
-let imgCode = computed(() => {
+const imgMaxWidth = computed(() => Math.min(maxWidth.value, asd.value.imgWidth));
+const imgHeight = computed(() => 50 + (asd.value.imgSize * 20));
+const imgCode = computed(() => {
   const theme = asd.value.imgTitleBg + asd.value.imgTitle + asd.value.imgYmdBg + asd.value.imgYmd + asd.value.imgListBg + asd.value.imgList;
   return `<div style="width:${asd.value.imgWidth}px;height:${imgHeight.value}px;background:#${asd.value.imgListBg};overflow-y:${asd.value.imgScroll ? 'auto' : 'hidden'}"><a href="${location.origin + '/schedule/2015'}" target="_blank"><img src="${location.origin}/api/anime/schedule/svg/${asd.value.imgWidth}/${theme}"/></a></div>`;
 });
@@ -366,11 +366,11 @@ onUnmounted(() => {
 
 
 // ---------------------- cp: color picker ----------------------
-let cpColor = ref('#ffffff');
-let cpShow = ref(false);
-let cpX = ref(0);
-let cpY = ref(0);
-let cpTarget = ref('');
+const cpColor = ref('#ffffff');
+const cpShow = ref(false);
+const cpX = ref(0);
+const cpY = ref(0);
+const cpTarget = ref('');
 
 function openCp(event: MouseEvent, target: string) {
   cpX.value = Math.max(Math.min(event.clientX - 10, window.innerWidth - 266), 0);

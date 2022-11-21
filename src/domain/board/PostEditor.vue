@@ -23,7 +23,7 @@
       <div class="box-border" :class="({'w-[50%] pr-1 float-left': (mode == 'both'), 'hidden': (mode == 'view')})">
         <textarea ref="contentElement" v-model="content" @input="onInputContent" @keydown.tab="keydownTab" @keydown.enter="keydownEnter" placeholder="내용" class="outline-none p-2.5 !leading-[1.8] resize-none box-border bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md block w-full dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-gray-400 dark:text-white"></textarea>
       </div>
-      <div class="box-border" :class="({'w-[50%] pl-1 float-right': (mode == 'both'), 'hidden': (mode == 'edit')})">
+      <div class="box-border anissia-md-edit" :class="({'w-[50%] pl-1 float-right': (mode == 'both'), 'hidden': (mode == 'edit')})">
         <div class="md-view p-2 border border-gray-300 dark:border-zinc-600 rounded-md overflow-auto" ref="previewElement" v-html="contentHtml"></div>
       </div>
     </div>

@@ -42,9 +42,9 @@ import Anime from "../../domain/anime/Anime";
 import anissia from "../../common/anissia";
 import animeRemote from "../../domain/anime/remote/animeRemote";
 
-let weekList = ref(['日', '月', '火', '水', '木', '金', '土', '外', '新']);
-let weekNow = ref(-1);
-let animeList = ref([] as Anime[]);
+const weekList = ref(['日', '月', '火', '水', '木', '金', '土', '外', '新']);
+const weekNow = ref(-1);
+const animeList = ref([] as Anime[]);
 
 function isPureWeek() {
   return anissia.isPureWeek(weekNow.value);

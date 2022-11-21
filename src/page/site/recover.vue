@@ -98,15 +98,15 @@ import {useRoute} from "vue-router";
 import accountRemote from "../../domain/account/remote/accountRemote";
 import Result from "../../common/Result";
 
-let mode = ref('none');
-let token = ref('');
-let message = ref('');
+const mode = ref('none');
+const token = ref('');
+const message = ref('');
 
-let email = ref('');
-let nickname = ref('');
+const email = ref('');
+const nickname = ref('');
 
-let password = ref('');
-let passwordConfirm = ref('');
+const password = ref('');
+const passwordConfirm = ref('');
 
 onMounted(() => {
   token.value = (useRoute().params.token || '') as string;

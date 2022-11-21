@@ -51,11 +51,11 @@ import anissia from "../../common/anissia";
 import AnimeCaption from "../../domain/anime/AnimeCaption";
 
 // data
-let weekList = ref([...Array(9).keys()]);
-let weekNow = ref(-1);
-let animeList = ref([]) as Ref<Anime[]>;
-let animeNow = ref(null) as Ref<Anime|null>;
-let captionList = ref([]) as Ref<AnimeCaption[]>;
+const weekList = ref([...Array(9).keys()]);
+const weekNow = ref(-1);
+const animeList = ref([]) as Ref<Anime[]>;
+const animeNow = ref(null) as Ref<Anime|null>;
+const captionList = ref([]) as Ref<AnimeCaption[]>;
 
 // method
 function isPureWeek() {

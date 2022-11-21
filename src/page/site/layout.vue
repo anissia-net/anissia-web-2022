@@ -75,14 +75,16 @@ import {onBeforeRouteUpdate, useRoute, useRouter} from "vue-router";
 import sessionService from "../../domain/session/remote/sessionService";
 import '../../common/md.pcss';
 import image_error from "./layout/image_error.svg";
+import image_error_edit from "./layout/image_error_edit.svg";
+
 
 const router = useRouter();
 const route = useRoute();
 const session = sessionStore();
 
-let onHeaderMenu = ref(false)
-let url = anissia.url;
-let user = computed(() => session.user);
+const onHeaderMenu = ref(false)
+const url = anissia.url;
+const user = computed(() => session.user);
 
 function logout() {
   sessionService.logout(() => sessionService.amendPathBySession(route.path, router));
@@ -100,7 +102,7 @@ function imageLoadError(e: Event) {
   if (((e.target || {}) as HTMLElement).tagName == 'IMG') {
     const img = e.target as HTMLImageElement;
     if (!img.onerror) {
-      img.src = image_error;
+      img.src = img.closest('.anissia-md-edit') ? image_error_edit : image_error;
       img.title = '이미지를 찾을 수 없습니다.';
     }
   }
