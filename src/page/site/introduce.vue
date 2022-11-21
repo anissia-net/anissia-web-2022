@@ -126,13 +126,13 @@ import {SiteMember} from "./introduce/SiteMember";
 const nowYear = new Date().getFullYear();
 
 let adminMembers = ref([
-  new SiteMember('또_탈퇴된코란', `2009 ~ ${nowYear}`, [`기획`, `관리`, `애니시아 서버 제공`]),
+  new SiteMember('또_탈퇴된코란', `2009 ~ ${nowYear}`, [`기획`, `관리`, `애니시아 서버 제공`, `블로그||https://coran.co.kr`, `트위터||https://twitter.com/c0ran`]),
   new SiteMember('Leon', `2015 ~ ${nowYear}`, [`관리`]),
 ]) as unknown as SiteMember[];
 
 let supportMembers = ref([
   new SiteMember('박용서', `2007 ~ 2013<br/>개발지원 2013 ~ ${nowYear}`, [`개발총괄`, `애니편성표`, `애니시아`, `시스템`, `API`, `디자인`, `기획`, `가리사니||https://gs.saro.me`, `GITHUB||https://github.com/ac-saro` ,`페이스북||https://www.facebook.com/j.saro.co`]),
-  new SiteMember('매디', `2007 ~ 2013<br/>개발지원 2013 ~ ${nowYear}`, [`일러스트총괄`, `아이콘`, `애니편성표`, `Blog||https://blog.naver.com/ehozil`]),
+  new SiteMember('매디', `2007 ~ 2013<br/>개발지원 2013 ~ ${nowYear}`, [`일러스트총괄`, `아이콘`, `애니편성표`, `블로그||https://blog.naver.com/ehozil`]),
 ]) as unknown as SiteMember[];
 
 let prevMembers = ref([
@@ -142,7 +142,7 @@ let prevMembers = ref([
   new SiteMember('Annyeong', '2009', [`다음위젯`]),
   new SiteMember('Kernys', '2009', [`다음위젯`]),
   new SiteMember('Reve', '2007 ~ 2011', [`iOS`]),
-  new SiteMember('랜스', '2007 ~ 2009', [`애니편성표 프로그램`, `Blog||http://blog.lancekun.com/tc/`]),
+  new SiteMember('랜스', '2007 ~ 2009', [`애니편성표 프로그램`, `블로그||http://blog.lancekun.com/tc/`]),
 ]) as unknown as SiteMember[];
 
 let siteHistory = ref([

@@ -1,6 +1,6 @@
 <template>
 
- <div class="mt-2">
+ <div class="mt-2 min-h-[225px]">
    <div v-for="node in list" :key="node.topicNo" class="flex py-3 px-1 border-b border-gray-200 dark:border-zinc-700 text-sm">
      <div class="flex-1">
        <router-link :to="`/${props.ticker}?topicNo=${node.topicNo}`" class="block">
