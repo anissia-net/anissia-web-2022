@@ -16,6 +16,11 @@ export default class PageData<T> {
     return page;
   }
 
+  public notLoaded(): PageData<T> {
+    this.loaded = false;
+    return this;
+  }
+
   public content = new Array<T>() as T[];
   public number = 0;
   public totalElements = 0;
@@ -25,4 +30,5 @@ export default class PageData<T> {
   public last = false;
   public numberOfElements = 20;
   public size = 20;
+  public loaded = true;
 }

@@ -113,7 +113,7 @@
           </div>
         </div>
       </div>
-      <div v-else>
+      <div v-else-if="list.loaded">
         <div class="text-xl text-center my-32">
           <b>{{getNowSearchedQuery()}}</b>에 대한 검색결과가 없습니다.
         </div>
@@ -136,7 +136,7 @@ import {onBeforeRouteUpdate, useRouter} from "vue-router";
 import {Locate} from "../../common/Locate";
 import scrollLoader from "../../common/ScrollLoader";
 
-const list = ref(PageData.empty()) as Ref<PageData<Anime>>;
+const list = ref(PageData.empty().notLoaded()) as Ref<PageData<Anime>>;
 const anime = ref(null) as Ref<Anime|null>;
 let lastAnimeNo = -1;
 const page = ref(0);

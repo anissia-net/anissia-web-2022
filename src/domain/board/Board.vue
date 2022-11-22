@@ -28,7 +28,7 @@
           <PostEditor :ticker="props.ticker" :post="newPost" :reload="loadViewForce" />
         </div>
       </div>
-      <div v-else class="text-center text-3xl py-32">
+      <div v-else-if="loaded" class="text-center text-3xl py-32">
         존재하지 않거나 삭제된 글입니다.
       </div>
 
@@ -96,6 +96,8 @@ const user = computed(() => session.user);
 const newTopic = ref(Post.getNewTopic());
 const newPost = ref(Post.getNewPost(new Topic()));
 
+const loaded = ref(false);
+
 let lastTopicNo = -1;
 
 function init() {
@@ -125,6 +127,7 @@ function loadView(locate: Locate = new Locate()) {
       boardRemote.getTopic(props.ticker!!, no, node => {
         view.value = node;
         newPost.value = Post.getNewPost(node);
+        loaded.value = true
       });
     } else {
       view.value = view.value;

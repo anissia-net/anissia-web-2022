@@ -3,7 +3,7 @@
   <div class="container m-auto px-4 duration-300">
 
     <div v-if="anime" class="mb-10">
-      <div v-if="anime.animeNo >= 0">
+      <div v-if="anime.animeNo > 0 || (anime.animeNo == 0 && animeNo == 0)">
 
         <table class="w-full text-sm text-left text-zinc-500 dark:text-zinc-400">
           <thead>
@@ -209,7 +209,7 @@
           </div>
         </div>
       </div>
-      <div v-else>
+      <div v-else-if="list.loaded">
         <div class="text-xl text-center my-32">
           <b>{{getNowSearchedQuery()}}</b>에 대한 검색결과가 없습니다.
         </div>
@@ -234,8 +234,9 @@ import {Locate} from "../../common/Locate";
 import scrollLoader from "../../common/ScrollLoader";
 import anissia from "../../common/anissia";
 
-const list = ref(PageData.empty()) as Ref<PageData<Anime>>;
+const list = ref(PageData.empty().notLoaded()) as Ref<PageData<Anime>>;
 const anime = ref(null) as Ref<Anime|null>;
+const animeNo = ref(-1);
 let lastAnimeNo = -1;
 const page = ref(0);
 const query = ref<string>(new Locate().getParameter('q', '') as string);
@@ -274,13 +275,13 @@ function loadAnime(locate: Locate, forced: boolean = false) {
   if (forced) {
     lastAnimeNo = -1;
   }
-  const animeNo = locate.getIntParameter('animeNo', -1);
-  if (animeNo > 0) {
-    if (lastAnimeNo != animeNo) {
-      lastAnimeNo = animeNo;
-      animeRemote.getAnime(animeNo, node => anime.value = node.bindEdit());
+  const no = animeNo.value = locate.getIntParameter('animeNo', -1);
+  if (no > 0) {
+    if (lastAnimeNo != no) {
+      lastAnimeNo = no;
+      animeRemote.getAnime(no, node => anime.value = node.bindEdit());
     }
-  } else if (animeNo == 0) {
+  } else if (no == 0) {
     lastAnimeNo = -1;
     anime.value = new Anime().bindEdit();
   } else {

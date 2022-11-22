@@ -34,7 +34,7 @@
 
         </div>
       </div>
-      <div v-if="list.content.length == 0">
+      <div v-if="list.content.length == 0 && list.loaded">
         <div class="text-center text-xl mt-32">진행중인 자막이 없습니다.</div>
       </div>
     </div>
@@ -56,7 +56,7 @@ import anissia from "../../common/anissia";
 const page = ref(0);
 const state = ref(0);
 const sl = scrollLoader();
-const list = ref(PageData.empty()) as Ref<PageData<AnimeCaption>>;
+const list = ref(PageData.empty().notLoaded()) as Ref<PageData<AnimeCaption>>;
 
 function clear(locate: Locate) {
   state.value = locate.getParameter('state', '1') == '0' ? 0 : 1;

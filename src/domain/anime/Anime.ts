@@ -34,7 +34,6 @@ export default class Anime {
     public editEndDateMonth = '';
     public editEndDateDate = '';
 
-
     public get tags(): string[] {
         if (this._tags.length) {
             return this._tags;
