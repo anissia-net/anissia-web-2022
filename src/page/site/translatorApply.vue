@@ -79,7 +79,7 @@
         <label class="inline-flex relative cursor-pointer my-6 leading-[1]">
           <input type="checkbox" v-model="agree" name="agree" class="sr-only peer">
           <div class="w-[38px] h-[20px] mt-[6px] outline-none rounded-full peer bg-gray-200 dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[8px] after:left-[3px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500 dark:peer-checked:bg-blue-800"></div>
-          <span class="ml-3 text-lg font-medium text-gray-900 dark:text-zinc-400">위 사항을 읽고 확인하였습니다.</span>
+          <span class="ml-3 text-lg font-medium text-gray-900 dark:text-zinc-300">위 사항을 읽고 확인하였습니다.</span>
         </label>
 
         <div class="text-xl">

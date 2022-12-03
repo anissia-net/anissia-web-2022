@@ -5,16 +5,16 @@
     <div class="font-bold text-xl">회원 정보</div>
 
     <div class="overflow-x-auto relative mt-5">
-      <table class="w-full text-sm text-left text-zinc-500 dark:text-zinc-400">
+      <table class="w-full text-sm text-left text-zinc-500 dark:text-zinc-300">
         <tbody>
         <tr class="bg-white border-b dark:bg-zinc-900 dark:border-zinc-800">
-          <th scope="row" class="py-4 px-6 font-medium w-[20%] text-zinc-500 dark:text-zinc-400">계정</th>
+          <th scope="row" class="py-4 px-6 font-medium w-[20%] text-zinc-500 dark:text-zinc-300">계정</th>
           <td class="py-4 px-6">
             <b class="text-md mr-3">{{account.email}}</b>
           </td>
         </tr>
         <tr class="bg-white border-b dark:bg-zinc-900 dark:border-zinc-800">
-          <th scope="row" class="py-4 px-6 font-medium text-zinc-500 dark:text-zinc-400">권한</th>
+          <th scope="row" class="py-4 px-6 font-medium text-zinc-500 dark:text-zinc-300">권한</th>
           <td class="py-4 px-6">
             <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="node in account.rolesText" :key="node">
               {{node}}
@@ -22,14 +22,14 @@
           </td>
         </tr>
         <tr v-if="mode != 'edit-nickname'" class="bg-white border-b dark:bg-zinc-900 dark:border-zinc-800">
-          <th scope="row" class="py-4 px-6 font-medium text-zinc-500 dark:text-zinc-400">닉네임</th>
+          <th scope="row" class="py-4 px-6 font-medium text-zinc-500 dark:text-zinc-300">닉네임</th>
           <td class="py-4 px-6">
             <b class="text-md mr-3">{{account.name}}</b>
             <button type="button" @click="mode = 'edit-nickname'" class="py-1 px-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-zinc-900/50 dark:text-gray-400 dark:border-zinc-800 dark:hover:text-white dark:hover:bg-zinc-900">수정</button>
           </td>
         </tr>
         <tr v-if="mode == 'edit-nickname'" class="bg-white border-b dark:bg-zinc-900 dark:border-zinc-800">
-          <th scope="row" class="py-4 px-6 font-medium text-zinc-500 dark:text-zinc-400">닉네임</th>
+          <th scope="row" class="py-4 px-6 font-medium text-zinc-500 dark:text-zinc-300">닉네임</th>
           <td class="py-4 px-6">
             <div class="max-w-[300px]">
               <div>
@@ -45,13 +45,13 @@
           </td>
         </tr>
         <tr v-if="mode != 'edit-password'" class="bg-white border-b dark:bg-zinc-900 dark:border-zinc-800">
-          <th scope="row" class="py-4 px-6 font-medium text-zinc-500 dark:text-zinc-400">암호</th>
+          <th scope="row" class="py-4 px-6 font-medium text-zinc-500 dark:text-zinc-300">암호</th>
           <td class="py-4 px-6">
             <button type="button" @click="mode = 'edit-password'" class="py-1 px-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-zinc-900/50 dark:text-gray-400 dark:border-zinc-800 dark:hover:text-white dark:hover:bg-zinc-900">변경하기</button>
           </td>
         </tr>
         <tr v-if="mode == 'edit-password'" class="bg-white border-b dark:bg-zinc-900 dark:border-zinc-800">
-          <th scope="row" class="py-4 px-6 font-medium text-zinc-500 dark:text-zinc-400">암호</th>
+          <th scope="row" class="py-4 px-6 font-medium text-zinc-500 dark:text-zinc-300">암호</th>
           <td class="py-4 px-6">
             <div class="max-w-[300px]">
               <div>

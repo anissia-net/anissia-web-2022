@@ -49,7 +49,7 @@
       <div v-for="(node, i) in list.content" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="text-gray-700 dark:text-gray-200">
           <router-link :to="`?topicNo=${node.topicNo}`">
-            <span class="text-md font-bold text-gray-800 dark:text-zinc-400">
+            <span class="text-md font-bold text-gray-800 dark:text-zinc-300">
               {{node.topic}}
             </span>
           </router-link>

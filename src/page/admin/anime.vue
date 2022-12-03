@@ -5,7 +5,7 @@
     <div v-if="anime" class="mb-10">
       <div v-if="anime.animeNo > 0 || (anime.animeNo == 0 && animeNo == 0)">
 
-        <table class="w-full text-sm text-left text-zinc-500 dark:text-zinc-400">
+        <table class="w-full text-sm text-left text-zinc-500 dark:text-zinc-300">
           <thead>
             <tr class="border-b dark:border-zinc-800">
               <th colspan="2" class="py-4 px-6 w-[20%] text-center">애니메이션 {{anime.animeNo != 0 ? '편집' : '신규등록'}}</th>
@@ -13,19 +13,19 @@
           </thead>
           <tbody>
             <tr class="border-b dark:border-zinc-800">
-              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-400">제목</th>
+              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-300">제목</th>
               <td class="py-4 px-6">
                 <input type="text" v-model="anime.subject" name="subject" placeholder="제목" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:border-blue-600 block w-full p-2.5 dark:bg-zinc-900 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white dark:focus:border-zinc-300">
               </td>
             </tr>
             <tr class="border-b dark:border-zinc-800">
-              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-400">원제</th>
+              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-300">원제</th>
               <td class="py-4 px-6">
                 <input type="text" v-model="anime.originalSubject" name="originalSubject" placeholder="원제" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:border-blue-600 block w-full p-2.5 dark:bg-zinc-900 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white dark:focus:border-zinc-300">
               </td>
             </tr>
             <tr class="border-b dark:border-zinc-800">
-              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-400">장르</th>
+              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-300">장르</th>
               <td class="pt-4 pb-2 px-6">
                 <div @click="toggleGenreOpen">
                   <div v-for="genre in anime.editGenres" :key="genre" class="mr-2 mb-2 px-2 py-1 cursor-pointer inline-block border text-gray-900 dark:text-gray-200 border-gray-600 dark:border-zinc-800">
@@ -44,7 +44,7 @@
               </td>
             </tr>
             <tr class="border-b dark:border-zinc-800">
-              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-400">상태</th>
+              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-300">상태</th>
               <td class="pt-4 pb-2 px-6">
                 <label class="mr-2 mb-2 px-2 py-1 cursor-pointer inline-block border text-gray-900 dark:text-gray-200 border-gray-600 dark:border-zinc-800" :class="anime.status == 'ON' ? '' : 'opacity-50'">
                   <input type="radio" name="status" v-model="anime.status" value="ON" class="hidden" />편성표
@@ -58,7 +58,7 @@
               </td>
             </tr>
             <tr class="border-b dark:border-zinc-800">
-              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-400">요일</th>
+              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-300">요일</th>
               <td class="pt-4 pb-2 px-6">
                 <label v-for="(week, i) in weekList" :key="week" class="mr-2 mb-2 px-2 py-1 cursor-pointer inline-block border text-gray-900 dark:text-gray-200 border-gray-600 dark:border-zinc-800" :class="(i+'') == anime.week ? '' : 'opacity-50'">
                   <input type="radio" name="week" v-model="anime.week" :value="i+''" class="hidden" />
@@ -67,13 +67,13 @@
               </td>
             </tr>
             <tr v-if="anime.week != '7'" class="border-b dark:border-zinc-800">
-              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-400">시간</th>
+              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-300">시간</th>
               <td class="py-4 px-6">
                 <input type="time" v-model="anime.time" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:border-blue-600 block p-2.5 dark:bg-zinc-900 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white dark:focus:border-zinc-300"/>
               </td>
             </tr>
             <tr class="border-b dark:border-zinc-800">
-              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-400">시작일</th>
+              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-300">시작일</th>
               <td class="py-4 px-6">
                 <div>
                   <label v-for="dateType in dateTypeList" :key="dateType" class="mr-2 px-2 py-1 cursor-pointer inline-block border text-gray-900 dark:text-gray-200 border-gray-600 dark:border-zinc-800" :class="dateType == anime.editStartDateType ? '' : 'opacity-50'">
@@ -93,7 +93,7 @@
               </td>
             </tr>
             <tr class="border-b dark:border-zinc-800">
-              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-400">종료일</th>
+              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-300">종료일</th>
               <td class="py-4 px-6">
                 <div>
                   <label v-for="dateType in dateTypeList" :key="dateType" class="mr-2 px-2 py-1 cursor-pointer inline-block border text-gray-900 dark:text-gray-200 border-gray-600 dark:border-zinc-800" :class="dateType == anime.editEndDateType ? '' : 'opacity-50'">
@@ -113,19 +113,19 @@
               </td>
             </tr>
             <tr class="border-b dark:border-zinc-800">
-              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-400">웹사이트</th>
+              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-300">웹사이트</th>
               <td class="py-4 px-6">
                 <input type="text" v-model="anime.website" name="website" placeholder="웹사이트" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:border-blue-600 block w-full p-2.5 dark:bg-zinc-900 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white dark:focus:border-zinc-300">
               </td>
             </tr>
             <tr class="border-b dark:border-zinc-800">
-              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-400">트위터</th>
+              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-300">트위터</th>
               <td class="py-4 px-6">
                 <input type="text" v-model="anime.twitter" name="twitter" placeholder="트위터" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:border-blue-600 block w-full p-2.5 dark:bg-zinc-900 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white dark:focus:border-zinc-300">
               </td>
             </tr>
             <tr class="border-b dark:border-zinc-800">
-              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-400">자막참여자</th>
+              <th class="py-4 px-6 w-[20%] text-zinc-500 dark:text-zinc-300">자막참여자</th>
               <td class="py-4 px-6">
                 <span v-for="cp in anime.captions" :key="cp.name" class="mr-4">{{cp.name}}</span>
                 <input type="button" value="자막참여" @click="addCaption()" class="text-white bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-800 dark:hover:bg-zinc-700" />
@@ -153,10 +153,10 @@
     </div>
 
     <div class="flex w-full justify-between rounded-md shadow-sm mt-1">
-      <router-link to="/admin/anime" class="text-center flex-1 rounded-l-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 'list' ? 'text-blue-700 dark:text-zinc-400' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
+      <router-link to="/admin/anime" class="text-center flex-1 rounded-l-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 'list' ? 'text-blue-700 dark:text-zinc-300' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
         전체
       </router-link>
-      <router-link to="/admin/anime?state=delist" class="text-center flex-1 rounded-r-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 'delist' ? 'text-blue-700 dark:text-zinc-400' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
+      <router-link to="/admin/anime?state=delist" class="text-center flex-1 rounded-r-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 'delist' ? 'text-blue-700 dark:text-zinc-300' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
         삭제대기
       </router-link>
     </div>
@@ -190,16 +190,16 @@
           <div v-for="(node, i) in list.content" class="p-4 rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
             <div>
               <router-link v-if="!node.agendaNo" :to="toAnimeViewUrl(node.animeNo)">
-                <div class="text-md font-bold text-gray-800 dark:text-zinc-400">{{node.subject}}</div>
+                <div class="text-md font-bold text-gray-800 dark:text-zinc-300">{{node.subject}}</div>
                 <div class="text-sm mt-1" v-if="node.originalSubject">{{node.originalSubject}}</div>
               </router-link>
               <div v-else>
                 <input type="button" value="복원" @click="doRecover(node)" class="float-right text-white bg-rose-700 hover:bg-rose-800 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-red-800 dark:hover:bg-red-700" />
-                <div class="text-md font-bold text-gray-800 dark:text-zinc-400">{{node.subject}}</div>
+                <div class="text-md font-bold text-gray-800 dark:text-zinc-300">{{node.subject}}</div>
                 <div class="text-sm mt-1" v-if="node.originalSubject">{{node.originalSubject}}</div>
               </div>
             </div>
-            <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-zinc-400">
+            <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-zinc-300">
               <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="tag in node.tags" :key="tag">{{tag}}</span>
               <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="tag in node.genres.split(/,/g)" :key="tag"><router-link :to="`/admin/anime?q=%23${encodeURIComponent(tag)}`">{{tag}}</router-link></span>
               <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-if="node.website"><a :href="node.website" target="_blank" class="fas fa-home"></a></span>

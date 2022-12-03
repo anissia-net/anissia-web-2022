@@ -1,11 +1,11 @@
 <template>
 
-  <div class="bg-neutral-100 dark:bg-[#111] min-h-screen text-zinc-800 dark:text-zinc-400 pb-10 box-border duration-300">
+  <div class="bg-neutral-100 dark:bg-[#111] min-h-screen text-zinc-800 dark:text-zinc-300 pb-10 box-border duration-300">
 
     <!-- 헤더 -->
     <header class="sticky  top-0 z-30 w-full backdrop-blur transition-colors lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/80 dark:bg-zinc-900/70 flex">
       <div class="container m-auto flex justify-between items-center duration-300">
-        <router-link to="/" class="block font-bold text-xl text-sky-700 dark:text-zinc-400 p-4">ANISSIA</router-link>
+        <router-link to="/" class="block font-bold text-xl text-sky-700 dark:text-zinc-300 p-4">ANISSIA</router-link>
         <div class="text-sm leading-6 font-semibold text-neutral-700 dark:text-gray-400 flex justify-end items-center">
           <router-link to="/schedule" class="hidden md:inline hover:text-sky-700 dark:hover:text-gray-200 p-4">
             <i class="fa-regular fa-calendar mr-1.5"></i> 편성표

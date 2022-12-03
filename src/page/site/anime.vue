@@ -71,7 +71,7 @@
 
     <div class="flex-col justify-center relative text-gray-500">
 
-      <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-zinc-400">Search</label>
+      <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-zinc-300">Search</label>
       <div class="relative">
         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -99,11 +99,11 @@
           <div v-for="(node, i) in list.content" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
             <div>
               <router-link :to="toAnimeViewUrl(node.animeNo)">
-                <div class="text-md font-bold text-gray-800 dark:text-zinc-400">{{node.subject}}</div>
+                <div class="text-md font-bold text-gray-800 dark:text-zinc-300">{{node.subject}}</div>
                 <div class="text-sm mt-1" v-if="node.originalSubject">{{node.originalSubject}}</div>
               </router-link>
             </div>
-            <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-zinc-400">
+            <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-zinc-300">
               <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="tag in node.tags" :key="tag">{{tag}}</span>
               <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="tag in node.genres.split(/,/g)" :key="tag"><router-link :to="`/anime?q=%23${encodeURIComponent(tag)}`">{{tag}}</router-link></span>
               <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-if="node.website"><a :href="node.website" target="_blank" class="fas fa-home"></a></span>
