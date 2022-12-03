@@ -6,7 +6,7 @@
       <div class="flex-1 text-center py-3 border-b-2 border-transparent hover:border-gray-500 dark:hover:border-gray-300 cursor-pointer duration-300" :class="({'border-gray-400 dark:border-gray-500': period === 'quarter'})" @click="load('quarter')">분기</div>
     </div>
     <div>
-      <div v-for="node in list" :key="node.animeNo" class="flex items-center py-3 my-1 border-b border-gray-200 dark:border-zinc-700 text-sm anissia-home-reduce-10">
+      <div v-for="node in list" :key="node.animeNo" class="flex items-center py-3 my-1 border-b border-gray-200 dark:border-zinc-800 text-sm anissia-home-reduce-10">
         <div class="text-center w-[40px] text-xs">{{node.rank}}</div>
         <div class="flex-1 px-3">
           <router-link :to="`/anime?animeNo=${node.animeNo}`" class="opacity-80 hover:opacity-100">{{node.subject}}</router-link>

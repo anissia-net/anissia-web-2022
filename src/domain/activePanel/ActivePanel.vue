@@ -4,7 +4,7 @@
 
     <div v-if="isAdminMode">
       <div class="pt-2 pb-4">
-        <input type="text" name="query" v-model="query" @keyup.enter="doQuery" autocomplete="off" placeholder="운영기록작성 /도움말" class="shadow-sm outline-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md block w-full p-4 dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-gray-400 dark:text-white">
+        <input type="text" name="query" v-model="query" @keyup.enter="doQuery" autocomplete="off" placeholder="운영기록작성 /도움말" class="shadow-sm outline-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md block w-full p-4 dark:bg-zinc-900 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white">
       </div>
 
       <div v-if="openHelp" class="border border-gray-300 text-gray-900 text-sm leading-[2] rounded-md block w-full p-3 mt-1 mb-3 dark:border-zinc-600 dark:placeholder-gray-400 dark:text-white ">
@@ -12,13 +12,13 @@
         <b>/권한반납 닉네임</b> - 자막제작자 권한을 반납합니다.
       </div>
 
-      <div v-if="translatorApplyCount" class="py-3 px-1 text-sm leading-[1.8] border-b border-gray-300 dark:border-zinc-700">
+      <div v-if="translatorApplyCount" class="py-3 px-1 text-sm leading-[1.8] border-b border-gray-300 dark:border-zinc-800">
         <router-link to="/translator/apply">현재 <b>{{translatorApplyCount}}</b> 건의 자막제작자 권한요청이 있습니다.</router-link>
       </div>
     </div>
 
     <div>
-      <div v-for="(node, idx) in list.content" :key="node.apNo" class="py-3 px-1 text-sm leading-[1.8] border-b border-gray-300 dark:border-zinc-700 anissia-home-reduce-10">
+      <div v-for="(node, idx) in list.content" :key="node.apNo" class="py-3 px-1 text-sm leading-[1.8] border-b border-gray-300 dark:border-zinc-800 anissia-home-reduce-10">
         <div class="float-right pl-4 inline-block opacity-60">{{node.regDtText}}</div>
         <div v-if="node.code == 'TEXT'" v-html="node.html" :class="({'opacity-50': !node.published})"></div>
         <div v-else-if="node.code == 'ANIME'">
@@ -36,7 +36,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr v-for="item in node.codeAnimeChangedList" :key="item.nm" class="bg-white border-b dark:bg-zinc-900/50 dark:border-zinc-700">
+              <tr v-for="item in node.codeAnimeChangedList" :key="item.nm" class="bg-white border-b dark:bg-zinc-900/50 dark:border-zinc-800">
                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 break-all dark:text-white">{{item.nm}}</th>
                 <td class="py-4 px-6 break-all" :class="({'opacity-30': (item.pv == '-')})">{{item.pv}}</td>
                 <td class="py-4 px-6 break-all">{{item.nv}}</td>

@@ -6,7 +6,7 @@
       최근 90일 데이터 / 총 <b>{{list.totalElements}}</b> 작품
     </div>
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      <div v-for="node in list.content" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div v-for="node in list.content" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="text-md font-bold text-gray-800 dark:text-gray-300"><router-link :to="`/anime?animeNo=${node.animeNo}`">{{node.subject}}</router-link></div>
         <div class="pt-3">
           <a :href="node.website" target="_blank">

@@ -99,17 +99,17 @@
           <div class="flex items-center space-x-2 mb-2">
             <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-gray-300 text-center"><i class="fa-solid fa-left-right"></i></span>
             <input type="range" v-model="asd.htmlWidth" min="180" max="900" step="10" class="shadow-sm flex-1 w-full h-2 bg-gray-200 rounded-md appearance-none cursor-pointer dark:bg-gray-700 shadow-sm">
-            <input type="number" v-model="asd.htmlWidth" class="shadow-sm block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-700 dark:border-zinc-600 dark:text-white shadow-sm" maxlength="3" />
+            <input type="number" v-model="asd.htmlWidth" class="shadow-sm block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white shadow-sm" maxlength="3" />
           </div>
           <div class="flex items-center space-x-2 mb-2">
             <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-gray-300 text-center"><i class="fa-solid fa-up-down"></i></span>
             <input type="range" v-model="asd.htmlHeight" min="240" max="780" step="10" class="shadow-sm flex-1 w-full h-2 bg-gray-200 rounded-md appearance-none cursor-pointer dark:bg-gray-700 shadow-sm">
-            <input type="number" v-model="asd.htmlHeight" class="shadow-sm block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-700 dark:border-zinc-600 dark:text-white shadow-sm" maxlength="3" />
+            <input type="number" v-model="asd.htmlHeight" class="shadow-sm block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white shadow-sm" maxlength="3" />
           </div>
           <label class="block mt-6 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">HTML 코드</label>
-          <textarea readonly :value="htmlCode" class="block p-2 h-[120px] md:h-[162px] resize-none w-full text-[12px] text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-700 dark:border-zinc-600 dark:text-white shadow-sm"></textarea>
+          <textarea readonly :value="htmlCode" class="block p-2 h-[120px] md:h-[162px] resize-none w-full text-[12px] text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white shadow-sm"></textarea>
           <div class="mt-3">
-            <button @click="doCopyClipboard(htmlCode)" class="w-[100%] bg-white hover:bg-gray-100 text-gray-600 border border-zinc-300 dark:bg-zinc-900/50 dark:hover:bg-zinc-900/80 dark:text-gray-300 dark:border-zinc-700 font-semibold py-2 px-4 rounded shadow-sm">
+            <button @click="doCopyClipboard(htmlCode)" class="w-[100%] bg-white hover:bg-gray-100 text-gray-600 border border-zinc-300 dark:bg-zinc-900/50 dark:hover:bg-zinc-900/80 dark:text-gray-300 dark:border-zinc-800 font-semibold py-2 px-4 rounded shadow-sm">
               <i class="fa-regular fa-copy"></i>&nbsp; 복사하기
             </button>
           </div>
@@ -137,12 +137,12 @@
           <div class="flex items-center space-x-2 mb-2">
             <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-gray-300 text-center"><i class="fa-solid fa-left-right"></i></span>
             <input type="range" v-model="asd.imgWidth" min="150" max="900" step="10" class="flex-1 w-full h-2 bg-gray-200 rounded-md appearance-none cursor-pointer dark:bg-gray-700">
-            <input type="text" v-model="asd.imgWidth" class="block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-700 dark:border-zinc-600 dark:text-white" maxlength="3" />
+            <input type="text" v-model="asd.imgWidth" class="block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white" maxlength="3" />
           </div>
           <div class="flex items-center space-x-2 mb-2">
             <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-gray-300 text-center"><i class="fa-solid fa-up-down"></i></span>
             <input type="range" v-model="asd.imgSize" min="5" max="20" step="1" class="flex-1 w-full h-2 bg-gray-200 rounded-md appearance-none cursor-pointer dark:bg-gray-700">
-            <input type="text" v-model="asd.imgSize" class="block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-700 dark:border-zinc-600 dark:text-white" maxlength="3" />
+            <input type="text" v-model="asd.imgSize" class="block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white" maxlength="3" />
           </div>
           <label for="use-scroll" class="inline-flex relative cursor-pointer my-4 mx-2">
             <input type="checkbox" v-model="asd.imgScroll" id="use-scroll" class="sr-only peer">
@@ -150,9 +150,9 @@
             <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">스크롤 사용여부</span>
           </label>
           <label class="block mt-6 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">HTML 코드</label>
-          <textarea readonly :value="imgCode" class="block p-2 h-[88px] md:h-[162px] resize-none w-full text-[12px] text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-700 dark:border-zinc-600 dark:text-white shadow-sm"></textarea>
+          <textarea readonly :value="imgCode" class="block p-2 h-[88px] md:h-[162px] resize-none w-full text-[12px] text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white shadow-sm"></textarea>
           <div class="mt-3">
-            <button @click="doCopyClipboard(imgCode)" class="w-[100%] bg-white hover:bg-gray-100 text-gray-600 border border-zinc-300 dark:bg-zinc-900/50 dark:hover:bg-zinc-900/80 dark:text-gray-300 dark:border-zinc-700 font-semibold py-2 px-4 rounded shadow-sm">
+            <button @click="doCopyClipboard(imgCode)" class="w-[100%] bg-white hover:bg-gray-100 text-gray-600 border border-zinc-300 dark:bg-zinc-900/50 dark:hover:bg-zinc-900/80 dark:text-gray-300 dark:border-zinc-800 font-semibold py-2 px-4 rounded shadow-sm">
               <i class="fa-regular fa-copy"></i>&nbsp; 복사하기
             </button>
           </div>
@@ -164,7 +164,7 @@
     <div class="font-bold text-xl mt-5">애니 편성표</div>
 
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/icon-schedule.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="/schedule/2015" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">애니편성표 (2015)</h5></a>
@@ -172,7 +172,7 @@
         </div>
       </div>
 
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/icon-schedule.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="/schedule/2009" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">애니편성표 (2009)</h5></a>
@@ -180,7 +180,7 @@
         </div>
       </div>
 
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/icon-time.svg"/></div>
         <div class="flex-1 pl-4">
           <router-link to="/introduce"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">애니시아 연혁</h5></router-link>
@@ -196,42 +196,42 @@
     </div>
 
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/3rd-ios.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="https://apps.apple.com/kr/app/aeni-pyeonseongpyo/id917536862" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">애니 편성표</h5></a>
           <p class="mb-1 font-normal text-zinc-500 dark:text-zinc-400">iOS / Young Ho Kim / 2014년</p>
         </div>
       </div>
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/3rd-ios.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="https://github.com/qkdxorjs1002/AniSched-Desktop#homebrew-macos-1011-%EC%9D%B4%EC%83%81" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">AniSched-Desktop</h5></a>
           <p class="mb-1 font-normal text-zinc-500 dark:text-zinc-400">macOS / Novang / 2021년</p>
         </div>
       </div>
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/3rd-android.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="https://play.google.com/store/apps/details?id=com.novang.anisched" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">AniSched</h5></a>
           <p class="mb-1 font-normal text-zinc-500 dark:text-zinc-400">Android / Novang / 2021년</p>
         </div>
       </div>
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/3rd-android.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="https://play.google.com/store/apps/details?id=anissia.android.schedule" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">애니 편성표</h5></a>
           <p class="mb-1 font-normal text-zinc-500 dark:text-zinc-400">Android / 애니시아 / 2021년</p>
         </div>
       </div>
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/3rd-windows.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="https://www.microsoft.com/store/apps/9PB5WSXN3TMN" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">AniSched</h5></a>
           <p class="mb-1 font-normal text-zinc-500 dark:text-zinc-400">Windows / Novang / 2015년</p>
         </div>
       </div>
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/3rd-chrome.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="https://chrome.google.com/webstore/detail/anisched/lkpfenhnbjcjekjihacpcoekgdclobdn" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">AniSched</h5></a>
@@ -244,7 +244,7 @@
 
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/3rd-api.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="https://github.com/anissia-net/document/blob/main/api_anime_schdule.md" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">API 가이드</h5></a>
@@ -252,7 +252,7 @@
         </div>
       </div>
 
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/3rd-doc.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="https://github.com/anissia-net/document/blob/main/doc_anime_rank.md" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">랭킹 집계기준</h5></a>
@@ -260,7 +260,7 @@
         </div>
       </div>
 
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/icon-code.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="https://github.com/anissia-net/anissia-web-2022" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">프론트엔드</h5></a>
@@ -268,7 +268,7 @@
         </div>
       </div>
 
-      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div class="p-4 flex justify-between items-center bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="w-[50px]"><img class="w-full" src="./schedule/icon-code.svg"/></div>
         <div class="flex-1 pl-4">
           <a href="https://github.com/anissia-net/anissia-core" target="_blank"><h5 class="mb-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">백엔드</h5></a>

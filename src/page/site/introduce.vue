@@ -14,13 +14,13 @@
       애니시아의 관리를 총괄하고 있는 운영진입니다.
     </div>
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      <div v-for="node in adminMembers" :key="node.key" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div v-for="node in adminMembers" :key="node.key" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div>
           <div class="text-lg font-bold text-gray-800 dark:text-gray-300">{{node.name}}</div>
           <div class="text-sm mt-1" v-html="node.date"></div>
         </div>
         <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-gray-300">
-          <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm" v-for="sn in node.tags" :key="sn.key">
+          <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="sn in node.tags" :key="sn.key">
             <a :href="sn.link" v-if="sn.link">{{sn.text}} <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             <span v-else>{{sn.text}}</span>
           </span>
@@ -36,13 +36,13 @@
       때문에 2013년 운영을 인수인계한 후 개발 지원만 하고 있습니다.
     </div>
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      <div v-for="node in supportMembers" :key="node.key" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div v-for="node in supportMembers" :key="node.key" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div>
           <div class="text-lg font-bold text-gray-800 dark:text-gray-300">{{node.name}}</div>
           <div class="text-sm mt-1" v-html="node.date"></div>
         </div>
         <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-gray-300">
-          <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm" v-for="sn in node.tags" :key="sn.key">
+          <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="sn in node.tags" :key="sn.key">
             <a :href="sn.link" v-if="sn.link">{{sn.text}} <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             <span v-else>{{sn.text}}</span>
           </span>
@@ -56,13 +56,13 @@
       각 프로그램에 대한 문의는 해당 개발자/단체에 하셔야 합니다.
     </div>
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      <div v-for="node in prevMembers" :key="node.key" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div v-for="node in prevMembers" :key="node.key" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div>
           <div class="text-lg font-bold text-gray-800 dark:text-gray-300">{{node.name}}</div>
           <div class="text-sm mt-1" v-html="node.date"></div>
         </div>
         <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-gray-300">
-          <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm" v-for="sn in node.tags" :key="sn.key">
+          <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="sn in node.tags" :key="sn.key">
             <a :href="sn.link" v-if="sn.link">{{sn.text}} <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             <span v-else>{{sn.text}}</span>
           </span>
@@ -85,7 +85,7 @@
     <div class="font-semibold text-xl mt-12">갤러리</div>
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
-      <div v-for="node in gallery" :key="node.file"  class="py-2 bg-white rounded-md border border-gray-200 shadow-md dark:bg-zinc-900/50 dark:border-zinc-700">
+      <div v-for="node in gallery" :key="node.file"  class="py-2 bg-white rounded-md border border-gray-200 shadow-md dark:bg-zinc-900/50 dark:border-zinc-800">
         <div class="text-center">
           <img class="m-auto mt-2" :src="node.src" alt="" />
         </div>

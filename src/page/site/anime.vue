@@ -7,13 +7,13 @@
         <div class="font-bold text-xl">{{anime.subject}}</div>
         <div class="text-sm mt-1">{{anime.originalSubject}}</div>
 
-        <table class="mt-6 text-sm text-left text-gray-800 dark:text-gray-100 border-t border-gray-200 dark:border-zinc-700">
+        <table class="mt-6 text-sm text-left text-gray-800 dark:text-gray-100 border-t border-gray-200 dark:border-zinc-800">
           <tbody>
-          <tr v-if="anime.period" class="border-b border-gray-200 dark:border-zinc-700">
+          <tr v-if="anime.period" class="border-b border-gray-200 dark:border-zinc-800">
             <th class="py-4 px-6 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-zinc-900/50">방영기간</th>
             <td class="py-4 px-6 break-all">{{anime.period}}</td>
           </tr>
-          <tr class="border-b border-gray-200 dark:border-zinc-700">
+          <tr class="border-b border-gray-200 dark:border-zinc-800">
             <th class="py-4 px-6 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-zinc-900/50">방영상태</th>
             <td class="py-4 px-6 break-all">
               <span v-if="anime.status == 'ON' && anime.pureWeek"> 매주 ({{anime.weekText}}) {{anime.timeText}}</span>
@@ -21,17 +21,17 @@
               <span v-else>{{anime.statusText}}</span>
             </td>
           </tr>
-          <tr class="border-b border-gray-200 dark:border-zinc-700">
+          <tr class="border-b border-gray-200 dark:border-zinc-800">
             <th class="py-4 px-6 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-zinc-900/50">장르</th>
             <td class="pt-0 pb-2 px-6">
-              <span class="rounded-md inline-block mb-0 ml-0 mt-2 mr-2 px-[8px] py-[5px] border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm" v-for="tag in anime.genres.split(/,/g)" :key="tag"><router-link :to="`/anime?q=%23${encodeURIComponent(tag)}`">{{tag}}</router-link></span>
+              <span class="rounded-md inline-block mb-0 ml-0 mt-2 mr-2 px-[8px] py-[5px] border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="tag in anime.genres.split(/,/g)" :key="tag"><router-link :to="`/anime?q=%23${encodeURIComponent(tag)}`">{{tag}}</router-link></span>
             </td>
           </tr>
-          <tr v-if="anime.website" class="border-b border-gray-200 dark:border-zinc-700">
+          <tr v-if="anime.website" class="border-b border-gray-200 dark:border-zinc-800">
             <th class="py-4 px-6 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-zinc-900/50">웹사이트</th>
             <td class="py-4 px-6 break-all"><a :href="anime.website" target="_blank">{{anime.website}}</a></td>
           </tr>
-          <tr v-if="anime.twitter" class="border-b border-gray-200 dark:border-zinc-700">
+          <tr v-if="anime.twitter" class="border-b border-gray-200 dark:border-zinc-800">
             <th class="py-4 px-6 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-zinc-900/50">트위터</th>
             <td class="py-4 px-6 break-all"><a :href="anime.twitter" target="_blank">{{anime.twitter}}</a></td>
           </tr>
@@ -42,14 +42,14 @@
           <div class="text-md font-bold">자막정보</div>
           <table class="mt-3 text-sm text-left text-gray-800 dark:text-gray-100">
             <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
-            <tr class="dark:text-gray-400 border-b border-gray-200 dark:border-zinc-700">
+            <tr class="dark:text-gray-400 border-b border-gray-200 dark:border-zinc-800">
               <th scope="col" class="py-3 px-6 bg-gray-50 dark:bg-zinc-900/50">자막</th>
               <th scope="col" class="py-3 px-6 bg-gray-50 dark:bg-zinc-900/50">제작자</th>
               <th scope="col" class="py-3 px-6 bg-gray-50 dark:bg-zinc-900/50">날짜</th>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="caption in anime.captions" :key="caption.name" class="border-b border-gray-200 dark:border-zinc-700">
+            <tr v-for="caption in anime.captions" :key="caption.name" class="border-b border-gray-200 dark:border-zinc-800">
               <td class="py-4 px-6">
                 <span v-if="caption.website"><a :href="caption.website" target="_blank" >{{caption.episodeText}}</a></span>
                 <span v-else>준비중</span>
@@ -76,7 +76,7 @@
         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <input type="text" id="default-search" autocomplete="off" class="outline-none block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-gray-400 dark:text-white" placeholder="애니메이션 검색 : 검색어 #장르 @제작자 /완결"  v-model="query" @click="autocorrectOn = true" @keydown="keyAutocorrect" @keyup="loadAutocorrect">
+        <input type="text" id="default-search" autocomplete="off" class="outline-none block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 dark:bg-zinc-900 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white" placeholder="애니메이션 검색 : 검색어 #장르 @제작자 /완결"  v-model="query" @click="autocorrectOn = true" @keydown="keyAutocorrect" @keyup="loadAutocorrect">
         <button type="button" @click="searchAnime()" class="text-white absolute right-2.5 bottom-2.5 bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-800 dark:hover:bg-zinc-900">검색</button>
       </div>
 
@@ -96,7 +96,7 @@
           총 <b>{{list.totalElements}}</b> 작품
         </div>
         <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          <div v-for="(node, i) in list.content" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+          <div v-for="(node, i) in list.content" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
             <div>
               <router-link :to="toAnimeViewUrl(node.animeNo)">
                 <div class="text-md font-bold text-gray-800 dark:text-gray-300">{{node.subject}}</div>
@@ -104,11 +104,11 @@
               </router-link>
             </div>
             <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-gray-300">
-              <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm" v-for="tag in node.tags" :key="tag">{{tag}}</span>
-              <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm" v-for="tag in node.genres.split(/,/g)" :key="tag"><router-link :to="`/anime?q=%23${encodeURIComponent(tag)}`">{{tag}}</router-link></span>
-              <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm" v-if="node.website"><a :href="node.website" target="_blank" class="fas fa-home"></a></span>
-              <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm" v-if="node.twitter"><a :href="node.twitter" target="_blank" class="fa-brands fa-twitter"></a></span>
-              <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm" v-if="node.captionCount"><span class="fas fa-closed-captioning">&nbsp; {{node.captionCount}}</span></span>
+              <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="tag in node.tags" :key="tag">{{tag}}</span>
+              <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="tag in node.genres.split(/,/g)" :key="tag"><router-link :to="`/anime?q=%23${encodeURIComponent(tag)}`">{{tag}}</router-link></span>
+              <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-if="node.website"><a :href="node.website" target="_blank" class="fas fa-home"></a></span>
+              <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-if="node.twitter"><a :href="node.twitter" target="_blank" class="fa-brands fa-twitter"></a></span>
+              <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-if="node.captionCount"><span class="fas fa-closed-captioning">&nbsp; {{node.captionCount}}</span></span>
             </div>
           </div>
         </div>

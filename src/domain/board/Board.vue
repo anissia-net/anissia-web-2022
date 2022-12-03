@@ -13,7 +13,7 @@
           </div>
           <div v-else>
             <div v-if="node.root" class="text-2xl">{{node.topic}}</div>
-            <div class="flex pt-2 pb-2 px-3 mt-5 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm text-sm">
+            <div class="flex pt-2 pb-2 px-3 mt-5 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm text-sm">
               <div class="flex-1"><i class="fa-solid fa-user mr-1.5"></i> {{node.name}}</div>
               <div class="ml-4">
                 <span class="opacity-[70%]">{{node.regDtText}}</span>
@@ -46,7 +46,7 @@
     </div>
 
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      <div v-for="(node, i) in list.content" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-700 shadow-sm">
+      <div v-for="(node, i) in list.content" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="text-gray-700 dark:text-gray-200">
           <router-link :to="`?topicNo=${node.topicNo}`">
             <span class="text-md font-bold text-gray-800 dark:text-gray-300">
