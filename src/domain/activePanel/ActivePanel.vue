@@ -27,8 +27,8 @@
             <span v-if="node.hasDetail && !node.openDetail"> - <b @click="node.openDetail = true" class="cursor-pointer ml-1">자세히</b></span>
           </div>
           <div v-if="node.openDetail">
-            <table class="mt-3 text-sm text-left text-gray-800 dark:text-gray-100">
-              <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-zinc-700 dark:text-gray-400">
+            <table class="mt-3 text-sm text-left text-gray-800 dark:text-zinc-300">
+              <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-[#191919] dark:text-zinc-300">
               <tr>
                 <th scope="col" class="py-3 px-6">속성</th>
                 <th scope="col" class="py-3 px-6">기존</th>
@@ -36,7 +36,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr v-for="item in node.codeAnimeChangedList" :key="item.nm" class="bg-white border-b dark:bg-zinc-900/50 dark:border-zinc-800">
+              <tr v-for="item in node.codeAnimeChangedList" :key="item.nm" class="bg-white border-b dark:bg-zinc-900/20 dark:border-zinc-900">
                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 break-all dark:text-white">{{item.nm}}</th>
                 <td class="py-4 px-6 break-all" :class="({'opacity-30': (item.pv == '-')})">{{item.pv}}</td>
                 <td class="py-4 px-6 break-all">{{item.nv}}</td>
