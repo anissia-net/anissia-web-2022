@@ -29,7 +29,7 @@ function updateColor(e: any) {
     background: #fff !important; border:1px solid #ddd !important;
     input[type=text] { background: #fff !important; border:1px solid #ddd !important; color:#333 !important; }
   }
-  button.vacp-copy-button { color: transparent !important; }
+  button.vacp-copy-button,
   .vacp-range-input-label-text--hue,
   .vacp-color-input-label-text { display: none !important; }
 }
