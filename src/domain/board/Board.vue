@@ -42,14 +42,14 @@
 
 
     <div v-if="boardInfo.canWriteTopic(user)" class="text-right mb-5">
-      <router-link to="?topicNo=0" class="text-white bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900/50 dark:hover:bg-zinc-700">글쓰기</router-link>
+      <router-link to="?topicNo=0" class="text-white bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900 dark:hover:bg-zinc-800/60">글쓰기</router-link>
     </div>
 
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       <div v-for="(node, i) in list.content" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div class="text-gray-700 dark:text-gray-200">
           <router-link :to="`?topicNo=${node.topicNo}`">
-            <span class="text-md font-bold text-gray-800 dark:text-gray-300">
+            <span class="text-md font-bold text-gray-800 dark:text-zinc-400">
               {{node.topic}}
             </span>
           </router-link>

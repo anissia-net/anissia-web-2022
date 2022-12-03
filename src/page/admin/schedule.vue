@@ -14,14 +14,14 @@
               <div v-if="node.scheduleTime != '-'" class="text-md font-bold text-blue-600 dark:text-blue-500">
                 {{node.scheduleTime}}
               </div>
-              <div class="text-md mt-1 font-bold text-gray-800 dark:text-gray-300">
+              <div class="text-md mt-1 font-bold text-gray-800 dark:text-zinc-400">
                 <span v-if="node.subjectPrefix">[<b class="text-blue-600 dark:text-blue-500">{{node.subjectPrefix}}</b>] </span>
                 {{node.subject}}
               </div>
               <div class="text-xs mt-1" v-if="node.originalSubject">{{node.originalSubject}}</div>
             </router-link>
           </div>
-          <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-gray-300">
+          <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-zinc-400">
             <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="tag in node.tags" :key="tag">{{tag}}</span>
             <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="tag in node.genres.split(/,/g)" :key="tag"><router-link :to="`/anime?q=%23${encodeURIComponent(tag)}`">{{tag}}</router-link></span>
             <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-if="node.website"><a :href="node.website" target="_blank" class="fas fa-home"></a></span>

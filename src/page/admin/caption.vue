@@ -3,10 +3,10 @@
   <div class="container m-auto px-4 duration-300">
 
     <div class="flex w-full justify-between rounded-md shadow-sm mt-1">
-      <router-link to="/admin/caption" class="text-center flex-1 rounded-l-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 1 ? 'bg-white text-blue-700 dark:text-gray-300' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
+      <router-link to="/admin/caption" class="text-center flex-1 rounded-l-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 1 ? 'bg-white text-blue-700 dark:text-zinc-400' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
         방영중
       </router-link>
-      <router-link to="/admin/caption?state=0" class="text-center flex-1 rounded-r-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 0 ? 'bg-white text-blue-700 dark:text-gray-300' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
+      <router-link to="/admin/caption?state=0" class="text-center flex-1 rounded-r-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 0 ? 'bg-white text-blue-700 dark:text-zinc-400' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
         완료
       </router-link>
     </div>

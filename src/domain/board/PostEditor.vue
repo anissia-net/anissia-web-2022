@@ -24,12 +24,12 @@
         <textarea ref="contentElement" v-model="content" @input="onInputContent" @keydown.tab="keydownTab" @keydown.enter="keydownEnter" placeholder="내용" class="outline-none p-2.5 !leading-[1.8] resize-none box-border bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md block w-full dark:bg-zinc-900 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white"></textarea>
       </div>
       <div class="box-border anissia-md-edit" :class="({'w-[50%] pl-1 float-right': (mode == 'both'), 'hidden': (mode == 'edit')})">
-        <div class="md-view p-2 border border-gray-300 dark:border-zinc-600 rounded-md overflow-auto" ref="previewElement" v-html="contentHtml"></div>
+        <div class="md-view p-2 border border-gray-300 dark:border-zinc-800 rounded-md overflow-auto" ref="previewElement" v-html="contentHtml"></div>
       </div>
     </div>
     <div class="overflow-auto mb-8">
-      <div class="float-left"><input v-if="!post.isNewPost" type="button" value="취소" @click="doCancel" class="text-white bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900/50 dark:hover:bg-zinc-700"/></div>
-      <div class="float-right"><input type="button" value="작성완료" @click="doSave" class="text-white bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900/50 dark:hover:bg-zinc-700"/></div>
+      <div class="float-left"><input v-if="!post.isNewPost" type="button" value="취소" @click="doCancel" class="text-white bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900 dark:hover:bg-zinc-800/60"/></div>
+      <div class="float-right"><input type="button" value="작성완료" @click="doSave" class="text-white bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900 dark:hover:bg-zinc-800/60"/></div>
     </div>
   </div>
 

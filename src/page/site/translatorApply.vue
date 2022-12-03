@@ -32,7 +32,7 @@
 
         <div class="mt-6 mb-2 text-2xl">심사이력</div>
         <div v-if="view.result == 'ACT' && user.isLogin && (user.isAdmin || user.name == view.name)" class="mt-3">
-          <div v-if="user.isAdmin" class="flex items-center border border-gray-300 dark:border-zinc-600 bg-gray-50 dark:bg-zinc-700 rounded-md ">
+          <div v-if="user.isAdmin" class="flex items-center border border-gray-300 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-700 rounded-md ">
             <div title="수리" @click="point = '+1'" class="w-[36px] h-[40px] leading-[38px] text-center cursor-pointer opacity-40 grayscale-[70%] text-green-600 rounded-l-md" :class="point == '+1' ? '!opacity-100 !grayscale-0' : ''"><i class="fa-solid fa-circle-check"></i></div>
             <div title="반려" @click="point = '-1'" class="w-[36px] h-[40px] leading-[38px] text-center cursor-pointer opacity-40 grayscale-[70%] text-red-600" :class="point == '-1' ? '!opacity-100 !grayscale-0' : ''"><i class="fa-solid fa-circle-xmark"></i></div>
             <div title="의견" @click="point = '0'" class="w-[36px] h-[40px] leading-[38px] text-center cursor-pointer opacity-40 grayscale-[70%] text-purple-500" :class="point == '0' ? '!opacity-100 !grayscale-0' : ''"><i class="fa-solid fa-comments"></i></div>
@@ -79,7 +79,7 @@
         <label class="inline-flex relative cursor-pointer my-6 leading-[1]">
           <input type="checkbox" v-model="agree" name="agree" class="sr-only peer">
           <div class="w-[38px] h-[20px] mt-[6px] outline-none rounded-full peer bg-gray-200 dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[8px] after:left-[3px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500 dark:peer-checked:bg-blue-800"></div>
-          <span class="ml-3 text-lg font-medium text-gray-900 dark:text-gray-300">위 사항을 읽고 확인하였습니다.</span>
+          <span class="ml-3 text-lg font-medium text-gray-900 dark:text-zinc-400">위 사항을 읽고 확인하였습니다.</span>
         </label>
 
         <div class="text-xl">
@@ -98,7 +98,7 @@
     </div>
 
     <div v-if="user.isLogin && (!view || view.applyNo != 0)" class="text-right mb-5">
-      <router-link to="/translator/apply?applyNo=0" class="text-white bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900/50 dark:hover:bg-zinc-700">자막제작자 신청</router-link>
+      <router-link to="/translator/apply?applyNo=0" class="text-white bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900 dark:hover:bg-zinc-800/60">자막제작자 신청</router-link>
     </div>
 
     <div class="mt-3 grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">

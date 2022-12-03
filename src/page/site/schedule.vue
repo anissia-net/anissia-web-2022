@@ -4,7 +4,7 @@
 
     <div class="md:flex md:space-x-6 justify-between">
       <!--  -->
-      <div class="md:flex-1 bg-white dark:bg-black/30 flex rounded-md border border-zinc-300 dark:border-zinc-600 p-4 shadow-sm">
+      <div class="md:flex-1 bg-white dark:bg-black/30 flex rounded-md border border-zinc-300 dark:border-zinc-800 p-4 shadow-sm">
         <div class="flex m-auto">
           <iframe v-if="asd.type === 'html'" :ref="e => htmlFrameRef = e" class="preview-border" src="/schedule/2015" :width="htmlMaxWidth" :height="asd.htmlHeight" @load="drawHtml"></iframe>
           <div v-else-if="asd.type === 'img'" class="preview-img preview-border" :style="({width: `${imgMaxWidth}px`,height: `${imgHeight}px`, background: `#${asd.imgListBg}`, 'overflow-y': asd.imgScroll ? 'auto' : 'hidden'})">
@@ -20,10 +20,10 @@
       <div class="md:w-64">
         <label class="block mt-2 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">소스타입</label>
         <div class="flex w-full justify-between rounded-md shadow-sm">
-          <button type="button" @click="setType('html')" class="flex-1 rounded-l-lg p-2 text-sm border border-gray-200 dark:border-gray-700 dark:bg-gray-800" :class="asd.type == 'html' ? 'bg-white text-blue-700 dark:text-gray-300' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500'">
+          <button type="button" @click="setType('html')" class="flex-1 rounded-l-lg p-2 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="asd.type == 'html' ? 'bg-white text-blue-700 dark:text-zinc-400' : 'bg-gray-50 text-gray-500 dark:opacity-60 dark:text-neutral-500'">
             HTML
           </button>
-          <button type="button" @click="setType('img')" class="flex-1 rounded-r-lg p-2 text-sm border border-gray-200 dark:border-gray-700 dark:bg-gray-800" :class="asd.type == 'img' ? 'bg-white text-blue-700 dark:text-gray-300' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500'">
+          <button type="button" @click="setType('img')" class="flex-1 rounded-r-lg p-2 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="asd.type == 'img' ? 'bg-white text-blue-700 dark:text-zinc-400' : 'bg-gray-50 text-gray-500 dark:opacity-60 dark:text-neutral-500'">
             IMG (블로그)
           </button>
         </div>
@@ -31,85 +31,85 @@
           <div class="select-none">
             <label class="block mt-4 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">배경</label>
             <div class="flex space-x-2">
-              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm" @click="e => openCp(e, 'htmlBgLight')" :style="`background:#${asd.htmlBgLight}`"></div>
-              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm" @click="e => openCp(e, 'htmlBgDark')" :style="`background:#${asd.htmlBgDark}`"></div>
+              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm" @click="e => openCp(e, 'htmlBgLight')" :style="`background:#${asd.htmlBgLight}`"></div>
+              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm" @click="e => openCp(e, 'htmlBgDark')" :style="`background:#${asd.htmlBgDark}`"></div>
             </div>
             <label class="block mt-4 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">타이틀 (배경 / 글자)</label>
             <div class="flex space-x-2">
-              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm">
+              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm">
                 <div class="flex-1 color-unit rounded-l-md" @click="e => openCp(e, 'htmlTitleBgLight')" :style="`background:#${asd.htmlTitleBgLight}`"></div>
                 <div class="flex-1 color-unit rounded-r-md" @click="e => openCp(e, 'htmlTitleLight')" :style="`background:#${asd.htmlTitleLight}`"></div>
               </div>
-              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm">
+              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm">
                 <div class="flex-1 color-unit rounded-l-md" @click="e => openCp(e, 'htmlTitleBgDark')" :style="`background:#${asd.htmlTitleBgDark}`"></div>
                 <div class="flex-1 color-unit rounded-r-md" @click="e => openCp(e, 'htmlTitleDark')" :style="`background:#${asd.htmlTitleDark}`"></div>
               </div>
             </div>
             <label class="block mt-4 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">요일 (배경 / 글자)</label>
             <div class="flex space-x-2">
-              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm">
+              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm">
                 <div class="flex-1 color-unit rounded-l-md" @click="e => openCp(e, 'htmlNavBgLight')" :style="`background:#${asd.htmlNavBgLight}`"></div>
                 <div class="flex-1 color-unit rounded-r-md" @click="e => openCp(e, 'htmlNavLight')" :style="`background:#${asd.htmlNavLight}`"></div>
               </div>
-              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm">
+              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm">
                 <div class="flex-1 color-unit rounded-l-md" @click="e => openCp(e, 'htmlNavBgDark')" :style="`background:#${asd.htmlNavBgDark}`"></div>
                 <div class="flex-1 color-unit rounded-r-md" @click="e => openCp(e, 'htmlNavDark')" :style="`background:#${asd.htmlNavDark}`"></div>
               </div>
             </div>
             <label class="block mt-4 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">요일 (활성) (배경 / 글자)</label>
             <div class="flex space-x-2">
-              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm">
+              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm">
                 <div class="flex-1 color-unit rounded-l-md" @click="e => openCp(e, 'htmlNavActBgLight')" :style="`background:#${asd.htmlNavActBgLight}`"></div>
                 <div class="flex-1 color-unit rounded-r-md" @click="e => openCp(e, 'htmlNavActLight')" :style="`background:#${asd.htmlNavActLight}`"></div>
               </div>
-              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm">
+              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm">
                 <div class="flex-1 color-unit rounded-l-md" @click="e => openCp(e, 'htmlNavActBgDark')" :style="`background:#${asd.htmlNavActBgDark}`"></div>
                 <div class="flex-1 color-unit rounded-r-md" @click="e => openCp(e, 'htmlNavActDark')" :style="`background:#${asd.htmlNavActDark}`"></div>
               </div>
             </div>
             <label class="block mt-4 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">리스트 (배경 / 글자)</label>
             <div class="flex space-x-2">
-              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm">
+              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm">
                 <div class="flex-1 color-unit rounded-l-md" @click="e => openCp(e, 'htmlListBgLight')" :style="`background:#${asd.htmlListBgLight}`"></div>
                 <div class="flex-1 color-unit rounded-r-md" @click="e => openCp(e, 'htmlListLight')" :style="`background:#${asd.htmlListLight}`"></div>
               </div>
-              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm">
+              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm">
                 <div class="flex-1 color-unit rounded-l-md" @click="e => openCp(e, 'htmlListBgDark')" :style="`background:#${asd.htmlListBgDark}`"></div>
                 <div class="flex-1 color-unit rounded-r-md" @click="e => openCp(e, 'htmlListDark')" :style="`background:#${asd.htmlListDark}`"></div>
               </div>
             </div>
             <label class="block mt-4 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">리스트 (활성) (배경 / 글자)</label>
             <div class="flex space-x-2">
-              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm">
+              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm">
                 <div class="flex-1 color-unit rounded-l-md" @click="e => openCp(e, 'htmlListActBgLight')" :style="`background:#${asd.htmlListActBgLight}`"></div>
                 <div class="flex-1 color-unit rounded-r-md" @click="e => openCp(e, 'htmlListActLight')" :style="`background:#${asd.htmlListActLight}`"></div>
               </div>
-              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm">
+              <div class="flex-1 flex rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm">
                 <div class="flex-1 color-unit rounded-l-md" @click="e => openCp(e, 'htmlListActBgDark')" :style="`background:#${asd.htmlListActBgDark}`"></div>
                 <div class="flex-1 color-unit rounded-r-md" @click="e => openCp(e, 'htmlListActDark')" :style="`background:#${asd.htmlListActDark}`"></div>
               </div>
             </div>
             <label class="block mt-4 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">접두어 (글자)</label>
             <div class="flex space-x-2">
-              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm" @click="e => openCp(e, 'htmlPrefixLight')" :style="`background:#${asd.htmlPrefixLight}`"></div>
-              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-600 shadow-sm" @click="e => openCp(e, 'htmlPrefixDark')" :style="`background:#${asd.htmlPrefixDark}`"></div>
+              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm" @click="e => openCp(e, 'htmlPrefixLight')" :style="`background:#${asd.htmlPrefixLight}`"></div>
+              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-800 shadow-sm" @click="e => openCp(e, 'htmlPrefixDark')" :style="`background:#${asd.htmlPrefixDark}`"></div>
             </div>
           </div>
           <label class="block mt-6 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">모양</label>
           <div class="flex items-center space-x-2 mb-2">
-            <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-gray-300 text-center"><i class="fa-solid fa-left-right"></i></span>
+            <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-zinc-400 text-center"><i class="fa-solid fa-left-right"></i></span>
             <input type="range" v-model="asd.htmlWidth" min="180" max="900" step="10" class="shadow-sm flex-1 w-full h-2 bg-gray-200 rounded-md appearance-none cursor-pointer dark:bg-gray-700 shadow-sm">
             <input type="number" v-model="asd.htmlWidth" class="shadow-sm block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white shadow-sm" maxlength="3" />
           </div>
           <div class="flex items-center space-x-2 mb-2">
-            <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-gray-300 text-center"><i class="fa-solid fa-up-down"></i></span>
+            <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-zinc-400 text-center"><i class="fa-solid fa-up-down"></i></span>
             <input type="range" v-model="asd.htmlHeight" min="240" max="780" step="10" class="shadow-sm flex-1 w-full h-2 bg-gray-200 rounded-md appearance-none cursor-pointer dark:bg-gray-700 shadow-sm">
             <input type="number" v-model="asd.htmlHeight" class="shadow-sm block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white shadow-sm" maxlength="3" />
           </div>
           <label class="block mt-6 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">HTML 코드</label>
           <textarea readonly :value="htmlCode" class="block p-2 h-[120px] md:h-[162px] resize-none w-full text-[12px] text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white shadow-sm"></textarea>
           <div class="mt-3">
-            <button @click="doCopyClipboard(htmlCode)" class="w-[100%] bg-white hover:bg-gray-100 text-gray-600 border border-zinc-300 dark:bg-zinc-900/50 dark:hover:bg-zinc-900/80 dark:text-gray-300 dark:border-zinc-800 font-semibold py-2 px-4 rounded shadow-sm">
+            <button @click="doCopyClipboard(htmlCode)" class="w-[100%] bg-white hover:bg-gray-100 text-gray-600 border border-zinc-300 dark:bg-zinc-900/50 dark:hover:bg-zinc-900/80 dark:text-zinc-400 dark:border-zinc-800 font-semibold py-2 px-4 rounded shadow-sm">
               <i class="fa-regular fa-copy"></i>&nbsp; 복사하기
             </button>
           </div>
@@ -118,41 +118,41 @@
           <div class="select-none">
             <label class="block mt-6 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">제목 (배경색 / 글자색)</label>
             <div class="flex space-x-2">
-              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-600" @click="e => openCp(e, 'imgTitleBg')" :style="`background:#${asd.imgTitleBg}`"></div>
-              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-600" @click="e => openCp(e, 'imgTitle')" :style="`background:#${asd.imgTitle}`"></div>
+              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-800" @click="e => openCp(e, 'imgTitleBg')" :style="`background:#${asd.imgTitleBg}`"></div>
+              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-800" @click="e => openCp(e, 'imgTitle')" :style="`background:#${asd.imgTitle}`"></div>
             </div>
             <label class="block mt-6 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">날짜 (배경색 / 글자색)</label>
             <div class="flex space-x-2">
-              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-600" @click="e => openCp(e, 'imgYmdBg')" :style="`background:#${asd.imgYmdBg}`"></div>
-              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-600" @click="e => openCp(e, 'imgYmd')" :style="`background:#${asd.imgYmd}`"></div>
+              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-800" @click="e => openCp(e, 'imgYmdBg')" :style="`background:#${asd.imgYmdBg}`"></div>
+              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-800" @click="e => openCp(e, 'imgYmd')" :style="`background:#${asd.imgYmd}`"></div>
             </div>
             <label class="block mt-6 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">목록 (배경색 / 글자색)</label>
             <div class="flex space-x-2">
-              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-600" @click="e => openCp(e, 'imgListBg')" :style="`background:#${asd.imgListBg}`"></div>
-              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-600" @click="e => openCp(e, 'imgList')" :style="`background:#${asd.imgList}`"></div>
+              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-800" @click="e => openCp(e, 'imgListBg')" :style="`background:#${asd.imgListBg}`"></div>
+              <div class="flex-1 color-unit rounded-md border border-zinc-300 dark:border-zinc-800" @click="e => openCp(e, 'imgList')" :style="`background:#${asd.imgList}`"></div>
             </div>
           </div>
 
           <label class="block mt-6 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">모양</label>
           <div class="flex items-center space-x-2 mb-2">
-            <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-gray-300 text-center"><i class="fa-solid fa-left-right"></i></span>
+            <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-zinc-400 text-center"><i class="fa-solid fa-left-right"></i></span>
             <input type="range" v-model="asd.imgWidth" min="150" max="900" step="10" class="flex-1 w-full h-2 bg-gray-200 rounded-md appearance-none cursor-pointer dark:bg-gray-700">
             <input type="text" v-model="asd.imgWidth" class="block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white" maxlength="3" />
           </div>
           <div class="flex items-center space-x-2 mb-2">
-            <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-gray-300 text-center"><i class="fa-solid fa-up-down"></i></span>
+            <span class="ml-3 w-5 text-sm font-medium text-gray-900 dark:text-zinc-400 text-center"><i class="fa-solid fa-up-down"></i></span>
             <input type="range" v-model="asd.imgSize" min="5" max="20" step="1" class="flex-1 w-full h-2 bg-gray-200 rounded-md appearance-none cursor-pointer dark:bg-gray-700">
             <input type="text" v-model="asd.imgSize" class="block w-[48px] text-center text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white" maxlength="3" />
           </div>
           <label for="use-scroll" class="inline-flex relative cursor-pointer my-4 mx-2">
             <input type="checkbox" v-model="asd.imgScroll" id="use-scroll" class="sr-only peer">
             <div class="w-[38px] h-[20px] mt-[1px] outline-none rounded-full peer bg-gray-200 dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500 dark:peer-checked:bg-blue-800"></div>
-            <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">스크롤 사용여부</span>
+            <span class="ml-3 text-sm font-medium text-gray-900 dark:text-zinc-400">스크롤 사용여부</span>
           </label>
           <label class="block mt-6 mb-2 text-center text-sm font-medium text-gray-900 dark:text-gray-400">HTML 코드</label>
           <textarea readonly :value="imgCode" class="block p-2 h-[88px] md:h-[162px] resize-none w-full text-[12px] text-zinc-900 outline-0 bg-zinc-50 rounded-md border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 dark:text-white shadow-sm"></textarea>
           <div class="mt-3">
-            <button @click="doCopyClipboard(imgCode)" class="w-[100%] bg-white hover:bg-gray-100 text-gray-600 border border-zinc-300 dark:bg-zinc-900/50 dark:hover:bg-zinc-900/80 dark:text-gray-300 dark:border-zinc-800 font-semibold py-2 px-4 rounded shadow-sm">
+            <button @click="doCopyClipboard(imgCode)" class="w-[100%] bg-white hover:bg-gray-100 text-gray-600 border border-zinc-300 dark:bg-zinc-900/50 dark:hover:bg-zinc-900/80 dark:text-zinc-400 dark:border-zinc-800 font-semibold py-2 px-4 rounded shadow-sm">
               <i class="fa-regular fa-copy"></i>&nbsp; 복사하기
             </button>
           </div>

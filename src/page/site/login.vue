@@ -22,7 +22,7 @@
                 <label class="inline-flex relative cursor-pointer my-4">
                   <input type="checkbox" id="remember" class="sr-only peer" v-model="tokenLogin">
                   <div class="w-[38px] h-[20px] mt-[1px] outline-none rounded-full peer bg-gray-200 dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500 dark:peer-checked:bg-blue-800"></div>
-                  <span class="ml-3 text-sm font-medium text-gray-500 dark:text-gray-300">자동로그인</span>
+                  <span class="ml-3 text-sm font-medium text-gray-500 dark:text-zinc-400">자동로그인</span>
                 </label>
               </div>
             </div>

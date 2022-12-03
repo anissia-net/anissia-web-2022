@@ -7,7 +7,7 @@
         <input type="text" name="query" v-model="query" @keyup.enter="doQuery" autocomplete="off" placeholder="운영기록작성 /도움말" class="shadow-sm outline-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md block w-full p-4 dark:bg-zinc-900 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white">
       </div>
 
-      <div v-if="openHelp" class="border border-gray-300 text-gray-900 text-sm leading-[2] rounded-md block w-full p-3 mt-1 mb-3 dark:border-zinc-600 dark:placeholder-gray-400 dark:text-white ">
+      <div v-if="openHelp" class="border border-gray-300 text-gray-900 text-sm leading-[2] rounded-md block w-full p-3 mt-1 mb-3 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white ">
         명령어 도움말<br/>
         <b>/권한반납 닉네임</b> - 자막제작자 권한을 반납합니다.
       </div>

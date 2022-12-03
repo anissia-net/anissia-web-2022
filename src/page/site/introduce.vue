@@ -16,10 +16,10 @@
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       <div v-for="node in adminMembers" :key="node.key" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div>
-          <div class="text-lg font-bold text-gray-800 dark:text-gray-300">{{node.name}}</div>
+          <div class="text-lg font-bold text-gray-800 dark:text-zinc-400">{{node.name}}</div>
           <div class="text-sm mt-1" v-html="node.date"></div>
         </div>
-        <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-gray-300">
+        <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-zinc-400">
           <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="sn in node.tags" :key="sn.key">
             <a :href="sn.link" v-if="sn.link">{{sn.text}} <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             <span v-else>{{sn.text}}</span>
@@ -38,10 +38,10 @@
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       <div v-for="node in supportMembers" :key="node.key" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div>
-          <div class="text-lg font-bold text-gray-800 dark:text-gray-300">{{node.name}}</div>
+          <div class="text-lg font-bold text-gray-800 dark:text-zinc-400">{{node.name}}</div>
           <div class="text-sm mt-1" v-html="node.date"></div>
         </div>
-        <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-gray-300">
+        <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-zinc-400">
           <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="sn in node.tags" :key="sn.key">
             <a :href="sn.link" v-if="sn.link">{{sn.text}} <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             <span v-else>{{sn.text}}</span>
@@ -58,10 +58,10 @@
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       <div v-for="node in prevMembers" :key="node.key" class="p-4 bg-white rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
         <div>
-          <div class="text-lg font-bold text-gray-800 dark:text-gray-300">{{node.name}}</div>
+          <div class="text-lg font-bold text-gray-800 dark:text-zinc-400">{{node.name}}</div>
           <div class="text-sm mt-1" v-html="node.date"></div>
         </div>
-        <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-gray-300">
+        <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-zinc-400">
           <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="sn in node.tags" :key="sn.key">
             <a :href="sn.link" v-if="sn.link">{{sn.text}} <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             <span v-else>{{sn.text}}</span>
@@ -76,7 +76,7 @@
         <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
         <time class="text-sm text-gray-400 dark:text-gray-500">{{node.date}}</time>
         <h3 class="mt-1 text-md font-semibold text-gray-700 dark:text-white">{{node.desc}}</h3>
-        <a :href="node.link" target="_blank" v-if="node.link != ''" class="py-1 px-3 mt-2 inline-block outline-none text-sm text-gray-900 bg-white rounded-md border border-gray-200 dark:bg-zinc-900/50 dark:text-zinc-300 dark:border-zinc-600">
+        <a :href="node.link" target="_blank" v-if="node.link != ''" class="py-1 px-3 mt-2 inline-block outline-none text-sm text-gray-900 bg-white rounded-md border border-gray-200 dark:bg-zinc-900/50 dark:text-zinc-300 dark:border-zinc-800">
           자세히 &nbsp;<i class="fa-solid fa-caret-right"></i>
         </a>
       </li>

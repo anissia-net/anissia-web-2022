@@ -33,7 +33,7 @@
         <RecentCaption />
         <div class="py-4">
           <router-link to="/caption/recent">
-            <div to="/caption/recent" class="text-white bg-gray-600 hover:bg-gray-700 text-center outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900/50 dark:hover:bg-zinc-700">더보기</div>
+            <div to="/caption/recent" class="text-white bg-gray-600 hover:bg-gray-700 text-center outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900 dark:hover:bg-zinc-800/60">더보기</div>
           </router-link>
         </div>
       </div>

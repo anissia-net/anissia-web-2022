@@ -135,7 +135,7 @@
         </table>
         <div class="mt-4 overflow-auto">
           <div class="float-left">
-            <input type="button" value="삭제" @click="doDelete()" class="text-white bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900/50 dark:hover:bg-zinc-700" />
+            <input type="button" value="삭제" @click="doDelete()" class="text-white bg-gray-600 hover:bg-gray-700 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-zinc-900 dark:hover:bg-zinc-800/60" />
           </div>
           <div class="float-right">
             <input type="button" value="저장" @click="doSave()" class="text-white bg-rose-700 hover:bg-rose-800 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-red-800 dark:hover:bg-red-700" />
@@ -153,10 +153,10 @@
     </div>
 
     <div class="flex w-full justify-between rounded-md shadow-sm mt-1">
-      <router-link to="/admin/anime" class="text-center flex-1 rounded-l-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 'list' ? 'text-blue-700 dark:text-gray-300' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
+      <router-link to="/admin/anime" class="text-center flex-1 rounded-l-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 'list' ? 'text-blue-700 dark:text-zinc-400' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
         전체
       </router-link>
-      <router-link to="/admin/anime?state=delist" class="text-center flex-1 rounded-r-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 'delist' ? 'text-blue-700 dark:text-gray-300' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
+      <router-link to="/admin/anime?state=delist" class="text-center flex-1 rounded-r-lg p-4 text-sm border border-gray-200 dark:border-zinc-800 dark:bg-zinc-900" :class="state === 'delist' ? 'text-blue-700 dark:text-zinc-400' : 'bg-gray-50 text-gray-500 dark:grayscale-[50%] dark:text-neutral-500 dark:bg-opacity-50'">
         삭제대기
       </router-link>
     </div>
@@ -172,7 +172,7 @@
       </div>
 
       <div v-if="autocorrectOn && autocorrect.length">
-        <ul class="autocorrect-list text-sky-600 dark:bg-zinc-900 dark:text-sky-300 mt-2 py-1 rounded-md border border-gray-300 dark:border-zinc-600 font-light">
+        <ul class="autocorrect-list text-sky-600 dark:bg-zinc-900 dark:text-sky-300 mt-2 py-1 rounded-md border border-gray-300 dark:border-zinc-800 font-light">
           <li v-for="(node, i) in autocorrect" :class="autocorrectIndex != i ? 'grayscale-[100%]' : ''" class=" pl-8 pr-2 py-1 relative cursor-pointer" @mouseover="autocorrectIndex = i">
             <router-link :to="`/admin/anime?animeNo=${node.key}`" class="block">
               <i :class="autocorrectIndex != i ? 'opacity-[0%]' : ''" class="fa-solid fa-arrow-right-long absolute w-4 h-4 left-2 top-2"></i>
@@ -190,16 +190,16 @@
           <div v-for="(node, i) in list.content" class="p-4 rounded-md border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm">
             <div>
               <router-link v-if="!node.agendaNo" :to="toAnimeViewUrl(node.animeNo)">
-                <div class="text-md font-bold text-gray-800 dark:text-gray-300">{{node.subject}}</div>
+                <div class="text-md font-bold text-gray-800 dark:text-zinc-400">{{node.subject}}</div>
                 <div class="text-sm mt-1" v-if="node.originalSubject">{{node.originalSubject}}</div>
               </router-link>
               <div v-else>
                 <input type="button" value="복원" @click="doRecover(node)" class="float-right text-white bg-rose-700 hover:bg-rose-800 outline-none font-medium rounded-md text-sm px-4 py-2 dark:bg-red-800 dark:hover:bg-red-700" />
-                <div class="text-md font-bold text-gray-800 dark:text-gray-300">{{node.subject}}</div>
+                <div class="text-md font-bold text-gray-800 dark:text-zinc-400">{{node.subject}}</div>
                 <div class="text-sm mt-1" v-if="node.originalSubject">{{node.originalSubject}}</div>
               </div>
             </div>
-            <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-gray-300">
+            <div class="mt-1 space-x-1 space-y-2 text-gray-800 dark:text-zinc-400">
               <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="tag in node.tags" :key="tag">{{tag}}</span>
               <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-for="tag in node.genres.split(/,/g)" :key="tag"><router-link :to="`/admin/anime?q=%23${encodeURIComponent(tag)}`">{{tag}}</router-link></span>
               <span class="rounded-md inline-block px-[5px] py-[3px] text-xs border border-zinc-300 dark:bg-zinc-900/50 dark:border-zinc-800 shadow-sm" v-if="node.website"><a :href="node.website" target="_blank" class="fas fa-home"></a></span>
