@@ -4,6 +4,7 @@ import sessionRemote from "./sessionRemote";
 import ajax from "../../../common/ajax";
 import {Router} from "vue-router";
 import {Locate} from "../../../common/Locate";
+import {data} from "autoprefixer";
 
 class SessionService {
 
@@ -13,22 +14,22 @@ class SessionService {
             return;
         }
 
-        sessionRemote.login(email, password, tokenLogin, (success, message, data) => {
-            if (success) {
+        sessionRemote.login(email, password, tokenLogin).then(res => {
+            if (res.success) {
                 sessionStore().setUser(Session.assign(data));
-                message !== '' && localStorage.setItem('login-token', message);
+                res.msg !== '' && localStorage.setItem('login-token', res.msg);
                 loginSuccess();
             } else {
-                alert(message || '로그인에 실패하였습니다.');
+                alert(res.msg || '로그인에 실패하였습니다.');
             }
         });
     }
 
     public tokenLogin(loginSuccess: () => void) {
-        sessionRemote.tokenLogin((success, message, data) => {
-            if (success) {
+        sessionRemote.tokenLogin().then(res => {
+            if (res.success) {
                 sessionStore().setUser(Session.assign(data));
-                message !== '' && localStorage.setItem('login-token', message);
+                res.msg !== '' && localStorage.setItem('login-token', res.msg);
                 loginSuccess();
             } else {
                 localStorage.removeItem('login-token');
