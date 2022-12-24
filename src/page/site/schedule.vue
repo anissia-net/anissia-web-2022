@@ -349,7 +349,7 @@ function colorModeHtml(mode: string) {
 function setType(type: string) {
   asd.value.type = type;
   if (type == 'img' && asd.value.imgDataList.length == 0) {
-    animeRemote.getScheduleAnimeList(new Date().getDay(), (list) => asd.value.imgDataList = list.map(e => `${e.scheduleTime} ${e.subject}`));
+    animeRemote.getScheduleAnimeList(new Date().getDay()).then((list) => asd.value.imgDataList = list.map(e => `${e.scheduleTime} ${e.subject}`));
   }
 }
 function doCopyClipboard(text: string) {

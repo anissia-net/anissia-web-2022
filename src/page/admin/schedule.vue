@@ -52,7 +52,7 @@ function isPureWeek() {
 
 function getAnimeList(week: number): void {
   weekNow.value = week;
-  animeRemote.getAdminScheduleAnimeList(week, (list) => animeList.value = list);
+  animeRemote.getAdminScheduleAnimeList(week).then((list) => animeList.value = list);
 }
 
 getAnimeList(new Date().getDay());

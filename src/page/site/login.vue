@@ -58,7 +58,7 @@ const path = new Locate().getParameter('path', '');
 const show = ref(path == '');
 
 function doLogin() {
-  sessionService.login(email.value, password.value, tokenLogin.value ? 1 : 0, () => {
+  sessionService.login(email.value, password.value, tokenLogin.value ? 1 : 0).then(() => {
     router.push(path && path.startsWith('/') ? path : '/');
   });
 }

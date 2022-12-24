@@ -18,7 +18,7 @@ onBeforeMount(() => {
     if (isLogin) {
       sessionService.amendPathBySession(route.path, router);
     } else {
-      sessionService.tokenLogin(() => sessionService.amendPathBySession(route.path, router));
+      sessionService.tokenLogin().then(() => sessionService.amendPathBySession(route.path, router));
     }
   });
   setInterval(() => { sessionService.sync(); }, 5 * 60000);

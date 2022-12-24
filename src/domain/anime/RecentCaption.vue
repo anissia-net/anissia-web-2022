@@ -22,7 +22,7 @@ import animeRemote from "./remote/animeRemote";
 import AnimeCaption from "./AnimeCaption";
 
 const list = ref([]) as Ref<AnimeCaption[]>;
-animeRemote.getCaptionRecent(data => list.value = data);
+animeRemote.getCaptionRecent().then(data => list.value = data);
 </script>
 
 <style>

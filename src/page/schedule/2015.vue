@@ -80,10 +80,10 @@ function isPureWeek() {
 }
 function getAnimeList(week: number): void {
   weekNow.value = week;
-  animeRemote.getScheduleAnimeList(week, (list) => animeList.value = list);
+  animeRemote.getScheduleAnimeList(week).then((list) => animeList.value = list);
 }
 function getCaptionList(anime: Anime) {
-  animeRemote.getAnimeCaptionList(anime.animeNo, (list) => {
+  animeRemote.getAnimeCaptionList(anime.animeNo).then((list) => {
     captionList.value = list;
     animeNow.value = anime;
   });

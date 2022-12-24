@@ -30,7 +30,7 @@ const list = ref([]) as Ref<AnimeRankItem[]>;
 
 function load(_period: string) {
   period.value = _period;
-  animeRemote.getRank(_period, data => list.value = data);
+  animeRemote.getRank(_period).then(data => list.value = data);
 }
 
 load("week");

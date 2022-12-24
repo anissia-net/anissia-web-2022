@@ -252,7 +252,7 @@ const genres = ref([]) as Ref<string[]>;
 const state = ref('list');
 
 function init() {
-  animeRemote.getGenres(_genres => genres.value = _genres)
+  animeRemote.getGenres().then(_genres => genres.value = _genres)
 }
 
 function clear(locate: Locate) {
@@ -279,7 +279,7 @@ function loadAnime(locate: Locate, forced: boolean = false) {
   if (no > 0) {
     if (lastAnimeNo != no) {
       lastAnimeNo = no;
-      animeRemote.getAnime(no, node => anime.value = node.bindEdit());
+      animeRemote.getAnime(no).then(node => anime.value = node.bindEdit());
     }
   } else if (no == 0) {
     lastAnimeNo = -1;
@@ -294,7 +294,7 @@ function loadList() {
   const isFirstPage = page.value == 0;
 
   if (state.value === 'list') {
-    animeRemote.getAdminAnimeList(query.value, page.value, pageData => {
+    animeRemote.getAdminAnimeList(query.value, page.value).then(pageData => {
       if (isFirstPage) {
         list.value = pageData;
       } else {
@@ -305,7 +305,7 @@ function loadList() {
       }
     });
   } else if (state.value === 'delist') {
-    animeRemote.getAdminAnimeDelist(pageData => {
+    animeRemote.getAdminAnimeDelist().then(pageData => {
       list.value = pageData;
     });
   }
@@ -325,7 +325,7 @@ function loadAutocorrect(event: KeyboardEvent) {
     autocorrectOn.value = true;
     autocorrectIndex.value = -1;
     autocorrectQuery = word;
-    animeRemote.getAnimeListAutocorrect(word, list => autocorrect.value = list);
+    animeRemote.getAnimeListAutocorrect(word).then(list => autocorrect.value = list);
   }
 }
 
@@ -384,7 +384,7 @@ function getNowSearchedQuery() {
 }
 
 function addCaption() {
-  animeRemote.addAdminCaption(anime.value?.animeNo!!, result => {
+  animeRemote.addAdminCaption(anime.value?.animeNo!!).then(result => {
     if (result.st == 'OK') {
       loadAnime(new Locate(), true);
       alert("자막제작자로 참여하셨습니다.");
@@ -396,7 +396,7 @@ function addCaption() {
 
 function doDelete() {
   if (confirm(`${anime.value?.subject}을(를) 삭제하시겠습니까?\n임의삭제시 권한박탈의 사유가됩니다.`)) {
-    animeRemote.deleteAdminAnime(anime.value?.animeNo!!, result => {
+    animeRemote.deleteAdminAnime(anime.value?.animeNo!!).then(result => {
       if (result.st == 'OK') {
         router.push(`/admin/anime`);
       } else if (result.msg) {
@@ -408,7 +408,7 @@ function doDelete() {
 
 function doRecover(anime: Anime) {
   if (confirm(`${anime.subject}을(를) 복원하시겠습니까?\n임의조작시 권한박탈의 사유가됩니다.`)) {
-    animeRemote.recoverAdminAnime(anime.agendaNo, result => {
+    animeRemote.recoverAdminAnime(anime.agendaNo).then(result => {
       if (result.st == 'OK') {
         router.push(`/admin/anime?animeNo=${result.data}`);
       } else if (result.msg) {
@@ -433,7 +433,7 @@ function doSave() {
     }
 
     if (isNew) {
-      animeRemote.addAdminAnime(ani, result => {
+      animeRemote.addAdminAnime(ani).then(result => {
         if (result.st == 'OK') {
           router.push(`/admin/anime?animeNo=${result.data}`)
           alert("애니메이션이 추가되었습니다.");
@@ -442,7 +442,7 @@ function doSave() {
         }
       });
     } else {
-      animeRemote.updateAdminAnime(ani, result => {
+      animeRemote.updateAdminAnime(ani).then(result => {
         if (result.st == 'OK') {
           loadAnime(new Locate(), true);
           alert("애니메이션이 수정되었습니다.");

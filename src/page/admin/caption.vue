@@ -66,7 +66,7 @@ function clear(locate: Locate) {
 function load() {
   const isFirstPage = page.value == 0;
 
-  animeRemote.getAdminCaptionList(state.value, page.value, pageData => {
+  animeRemote.getAdminCaptionList(state.value, page.value).then(pageData => {
     if (isFirstPage) {
       list.value = pageData;
     } else {
@@ -92,12 +92,12 @@ function setNow(caption: AnimeCaption) {
 }
 
 function doSave(caption: AnimeCaption) {
-  animeRemote.updateAdminCaption(caption, result => alert(result.msg));
+  animeRemote.updateAdminCaption(caption).then(result => alert(result.msg));
 }
 
 function doDelete(caption: AnimeCaption) {
   if (confirm("자막을 종료하시겠습니까?")) {
-    animeRemote.deleteAdminCaption(caption.animeNo, result => {
+    animeRemote.deleteAdminCaption(caption.animeNo).then(result => {
       result.st == "OK" ? load() : alert(result.msg);
     });
   }

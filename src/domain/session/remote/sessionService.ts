@@ -8,32 +8,33 @@ import {data} from "autoprefixer";
 
 class SessionService {
 
-    public login(email: string, password: string, tokenLogin: number, loginSuccess: () => void): void {
-
-        if (tokenLogin === 1 && !confirm('정말로 자동로그인을 사용하시겠습니까?\n- 로그인정보가 현 기기에 저장됩니다.\n- 공공장소에서는 절대 사용하지 마십시오.')) {
-            return;
-        }
-
-        sessionRemote.login(email, password, tokenLogin).then(res => {
-            if (res.success) {
-                sessionStore().setUser(Session.assign(data));
-                res.msg !== '' && localStorage.setItem('login-token', res.msg);
-                loginSuccess();
-            } else {
-                alert(res.msg || '로그인에 실패하였습니다.');
+    public login(email: string, password: string, tokenLogin: number): Promise<void> {
+        return new Promise(resolve => {
+            if (!(tokenLogin === 1 && !confirm('정말로 자동로그인을 사용하시겠습니까?\n- 로그인정보가 현 기기에 저장됩니다.\n- 공공장소에서는 절대 사용하지 마십시오.'))) {
+                sessionRemote.login(email, password, tokenLogin).then(res => {
+                    if (res.success) {
+                        sessionStore().setUser(Session.assign(res.data));
+                        res.msg !== '' && localStorage.setItem('login-token', res.msg);
+                        resolve();
+                    } else {
+                        alert(res.msg || '로그인에 실패하였습니다.');
+                    }
+                });
             }
         });
     }
 
-    public tokenLogin(loginSuccess: () => void) {
-        sessionRemote.tokenLogin().then(res => {
-            if (res.success) {
-                sessionStore().setUser(Session.assign(data));
-                res.msg !== '' && localStorage.setItem('login-token', res.msg);
-                loginSuccess();
-            } else {
-                localStorage.removeItem('login-token');
-            }
+    public tokenLogin(): Promise<void> {
+        return new Promise(resolve => {
+            sessionRemote.tokenLogin().then(res => {
+                if (res.success) {
+                    sessionStore().setUser(Session.assign(res.data));
+                    res.msg !== '' && localStorage.setItem('login-token', res.msg);
+                    resolve();
+                } else {
+                    localStorage.removeItem('login-token');
+                }
+            });
         });
     }
 

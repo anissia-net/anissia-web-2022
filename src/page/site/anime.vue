@@ -164,7 +164,7 @@ function loadAnime(locate: Locate) {
   if (animeNo > 0) {
     if (lastAnimeNo != animeNo) {
       lastAnimeNo = animeNo;
-      animeRemote.getAnime(animeNo, node => anime.value = node);
+      animeRemote.getAnime(animeNo).then(node => anime.value = node);
     }
   } else {
     lastAnimeNo = -1;
@@ -175,7 +175,7 @@ function loadAnime(locate: Locate) {
 function loadList() {
   const isFirstPage = page.value == 0;
 
-  animeRemote.getAnimeList(page.value, query.value, pageData => {
+  animeRemote.getAnimeList(page.value, query.value).then(pageData => {
     if (isFirstPage) {
       list.value = pageData;
     } else {
@@ -199,7 +199,7 @@ function loadAutocorrect(event: KeyboardEvent) {
     autocorrectOn.value = true;
     autocorrectIndex.value = -1;
     autocorrectQuery = word;
-    animeRemote.getAnimeListAutocorrect(word, list => autocorrect.value = list);
+    animeRemote.getAnimeListAutocorrect(word).then(list => autocorrect.value = list);
   }
 }
 

@@ -38,7 +38,7 @@ const sl = scrollLoader();
 function loadList() {
   const isFirstPage = page.value == 0;
 
-  animeRemote.getCaptionRecentPage(page.value, pageData => {
+  animeRemote.getCaptionRecentPage(page.value).then(pageData => {
     if (isFirstPage) {
       list.value = pageData;
     } else {
