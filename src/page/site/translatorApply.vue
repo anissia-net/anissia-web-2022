@@ -171,7 +171,7 @@ function loadView(locate: Locate = new Locate()) {
   if (applyNo > 0) {
     if (lastAgendaNo != applyNo) {
       lastAgendaNo = applyNo;
-      translatorRemote.getApply(applyNo, node => view.value = node);
+      translatorRemote.getApply(applyNo).then(node => view.value = node);
     } else {
       view.value = view.value;
     }
@@ -191,7 +191,7 @@ function loadView(locate: Locate = new Locate()) {
 function loadList() {
   const isFirstPage = page.value == 0;
 
-  translatorRemote.getApplyList(page.value, pageData => {
+  translatorRemote.getApplyList(page.value).then(pageData => {
     if (isFirstPage) {
       list.value = pageData;
     } else {
@@ -208,7 +208,7 @@ function doApply() {
     alert('자막제작자 신청 동의사항을 읽고 동의해주세요.');
     return;
   }
-  translatorRemote.addApply(website.value, res => {
+  translatorRemote.addApply(website.value).then(res => {
     if (res.st == 'OK') {
       router.push(`/translator/apply?applyNo=${res.data}`)
     } else {
@@ -219,7 +219,7 @@ function doApply() {
 
 function doComment() {
   const node = view.value!!;
-  translatorRemote.addApplyPoll(node.applyNo, point.value, comment.value, res => {
+  translatorRemote.addApplyPoll(node.applyNo, point.value, comment.value).then(res => {
     comment.value = '';
     if (res.st == 'OK') {
       clear();

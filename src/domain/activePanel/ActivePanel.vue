@@ -79,7 +79,7 @@ const translatorApplyCount = ref(0);
 const isAdminMode = ref(false);
 
 function loadTranslatorApplyCount() {
-  translatorRemote.getAdminTranslatorApplyCount(count => translatorApplyCount.value = count);
+  translatorRemote.getAdminTranslatorApplyCount().then(count => translatorApplyCount.value = count);
 }
 
 function load() {
