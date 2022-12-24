@@ -101,7 +101,7 @@ const loaded = ref(false);
 let lastTopicNo = -1;
 
 function init() {
-  boardRemote.getTicker(props.ticker!!, e => boardInfo.value = e);
+  boardRemote.getTicker(props.ticker!!).then(e => boardInfo.value = e);
 }
 
 function clear() {
@@ -124,7 +124,7 @@ function loadView(locate: Locate = new Locate()) {
   if (no > 0) {
     if (lastTopicNo != no) {
       lastTopicNo = no;
-      boardRemote.getTopic(props.ticker!!, no, node => {
+      boardRemote.getTopic(props.ticker!!, no).then(node => {
         view.value = node;
         newPost.value = Post.getNewPost(node);
         loaded.value = true
@@ -148,7 +148,7 @@ function loadView(locate: Locate = new Locate()) {
 function loadList() {
   const isFirstPage = page.value == 0;
 
-  boardRemote.getList(props.ticker!!, page.value, pageData => {
+  boardRemote.getList(props.ticker!!, page.value).then(pageData => {
     if (isFirstPage) {
       list.value = pageData;
     } else {
@@ -165,7 +165,7 @@ function doDelete(post: Post) {
     return;
   }
   if (post.root) {
-    boardRemote.deleteTopic(post.topicNo, result => {
+    boardRemote.deleteTopic(post.topicNo).then(result => {
       if (result.success) {
         router.push(location.pathname);
       } else {
@@ -173,7 +173,7 @@ function doDelete(post: Post) {
       }
     });
   } else {
-    boardRemote.deletePost(post.postNo, result => {
+    boardRemote.deletePost(post.postNo).then(result => {
       if (result.success) {
         loadViewForce();
       } else {

@@ -71,7 +71,7 @@ function doSave() {
 
 function doSaveTopic(post: Post) {
   if (post.isNew) {
-    boardRemote.createTopic(props.ticker!!, topic.value, content.value, result => {
+    boardRemote.createTopic(props.ticker!!, topic.value, content.value).then(result => {
       if (result.success) {
         router.push(`?topicNo=${result.data}`);
       } else {
@@ -79,7 +79,7 @@ function doSaveTopic(post: Post) {
       }
     });
   } else {
-    boardRemote.updateTopic(post.topicNo, topic.value, content.value, result => {
+    boardRemote.updateTopic(post.topicNo, topic.value, content.value).then(result => {
       if (result.success) {
         post.topic = topic.value;
         post.content = content.value;
@@ -101,7 +101,7 @@ function onInputContent(event: Event) {
 
 function doSavePost(post: Post) {
   if (post.isNew) {
-    boardRemote.createPost(post.topicNo, content.value, result => {
+    boardRemote.createPost(post.topicNo, content.value).then(result => {
       if (result.success) {
         (props.reload!!)();
         content.value = '';
@@ -111,7 +111,7 @@ function doSavePost(post: Post) {
       }
     })
   } else {
-    boardRemote.updatePost(post.postNo, content.value, result => {
+    boardRemote.updatePost(post.postNo, content.value).then(result => {
       if (result.success) {
         post.content = content.value;
         post.isEditMode = false;

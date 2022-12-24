@@ -83,7 +83,7 @@ function resize(event: Event) {
   applyResponsive();
 }
 
-boardRemote.getRecentHome(data => recentBoardData.value = data);
+boardRemote.getRecentHome().then(data => recentBoardData.value = data);
 applyResponsive();
 addEventListener("resize", resize, true);
 
