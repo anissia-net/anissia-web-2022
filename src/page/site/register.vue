@@ -92,7 +92,7 @@ onMounted(() => {
 });
 
 function sendRegisterAuthMail() {
-  accountRemote.sendRegisterAuthMail(email.value, password.value, passwordConfirm.value, nickname.value, res => {
+  accountRemote.sendRegisterAuthMail(email.value, password.value, passwordConfirm.value, nickname.value).then(res => {
     if (res.st == 'OK') {
       mode.value = 'needMailAuth';
     } else if (res.msg) {
@@ -102,7 +102,7 @@ function sendRegisterAuthMail() {
 }
 
 function validationRegister(token: string) {
-  accountRemote.validationRegister(token, res => {
+  accountRemote.validationRegister(token).then(res => {
     if (res.st == 'OK') {
       mode.value = 'pass';
     } else {

@@ -118,7 +118,7 @@ onMounted(() => {
 });
 
 function sendRecoverAuthMail() {
-  accountRemote.sendRecoverAuthMail(email.value, nickname.value, (result: Result<any>) => {
+  accountRemote.sendRecoverAuthMail(email.value, nickname.value).then((result: Result<any>) => {
     if (result.st == 'OK') {
       mode.value = 'needMailAuth';
     } else {
@@ -129,7 +129,7 @@ function sendRecoverAuthMail() {
 
 function validationRecoverAuthMail() {
   mode.value = 'wait';
-  accountRemote.validationRecoverAuthMail(token.value, (result: Result<any>) => {
+  accountRemote.validationRecoverAuthMail(token.value).then((result: Result<any>) => {
     if (result.st == 'OK') {
       mode.value = 'needPassword';
     } else {
@@ -143,7 +143,7 @@ function validationRecoverAuthMail() {
 
 function recoverPassword() {
   mode.value = 'wait';
-  accountRemote.recoverPassword(token.value, password.value, passwordConfirm.value, (result: Result<any>) => {
+  accountRemote.recoverPassword(token.value, password.value, passwordConfirm.value).then((result: Result<any>) => {
     if (result.st == 'OK') {
       mode.value = 'pass';
     } else {
@@ -154,7 +154,7 @@ function recoverPassword() {
 }
 
 function recoverEmail() {
-  accountRemote.recoverEmail(nickname.value, result => {
+  accountRemote.recoverEmail(nickname.value).then(result => {
     if (result.st == 'OK') {
       const data = result.data;
       alert(`이메일:\n - ${data.email}\n\n(구) 아이디:\n - ${data.account}`);

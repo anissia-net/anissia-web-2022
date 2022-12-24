@@ -94,14 +94,14 @@ const editPasswordConfirm = ref('');
 
 function load() {
   mode.value = 'none';
-  accountRemote.getAccount(e => {
+  accountRemote.getAccount().then(e => {
     account.value = e;
     editNickname.value = e.name;
   });
 }
 
 function updateNickname() {
-  accountRemote.updateUserName(editNickname.value, editNicknamePassword.value, e => {
+  accountRemote.updateUserName(editNickname.value, editNicknamePassword.value).then(e => {
     if (e.success) {
       load();
     } else {
@@ -111,7 +111,7 @@ function updateNickname() {
 }
 
 function updatePassword() {
-  accountRemote.updateUserPassword(editPrevPassword.value, editPassword.value, editPasswordConfirm.value, e => {
+  accountRemote.updateUserPassword(editPrevPassword.value, editPassword.value, editPasswordConfirm.value).then(e => {
     if (e.success) {
       load();
     } else {
