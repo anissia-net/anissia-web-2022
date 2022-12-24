@@ -85,7 +85,7 @@ function loadTranslatorApplyCount() {
 function load() {
   const isFirstPage = page.value == 0;
 
-  activePanelRemote.getList(page.value, props.mode!!, pageData => {
+  activePanelRemote.getList(page.value, props.mode!!).then(pageData => {
     if (isFirstPage) {
       list.value = pageData;
     } else {
@@ -106,7 +106,7 @@ function doQuery() {
     return;
   }
 
-  activePanelRemote.addNotice(line, result => {
+  activePanelRemote.addNotice(line).then(result => {
     if (result.st == 'OK') {
       page.value = 0;
       load();
