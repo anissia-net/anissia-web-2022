@@ -11,6 +11,9 @@ export default class PageData<T> {
   }
 
   public merge(pageData: PageData<T>): PageData<T> {
+    if (this.last && pageData.empty) {
+      return this;
+    }
     const page: PageData<T> = Object.assign(new PageData<T>(), pageData);
     page.content = [...this.content, ...pageData.content];
     return page;
