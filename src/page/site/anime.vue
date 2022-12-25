@@ -181,9 +181,7 @@ function loadList() {
     } else {
       list.value = list.value.merge(pageData);
     }
-    if (!pageData.last) {
-      nextTick(() => sl.next())
-    }
+    nextTick(() => sl.next(!pageData.last));
   });
 }
 

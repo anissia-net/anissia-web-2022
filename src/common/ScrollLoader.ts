@@ -23,9 +23,10 @@ class ScrollLoader {
     return (this.endY - (window.innerHeight * this._measure)) <= this.nowY;
   }
 
-  public next() {
-    this._on = true;
-    this._event();
+  public next(isNext: boolean = true) {
+    if ((this._on = isNext)) {
+      this._event();
+    }
   }
 
   public destroy() {
