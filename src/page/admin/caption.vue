@@ -20,7 +20,7 @@
           </div>
           <div class="mt-4 flex">
             <input type="button" value="◀" @click="moveEpisode(node, false)" class="w-[60px] mr-2 text-gray-700 dark:text-white bg-zinc-100 hover:bg-zinc-200 outline-none font-medium rounded-md text-sm py-2.5 text-center dark:bg-zinc-800 dark:hover:bg-zinc-800/80" />
-            <input type="number" name="episode" v-model="node.episode" class="text-center outline-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:border-blue-600 block w-full p-2.5 dark:bg-zinc-900 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white dark:focus:border-zinc-300">
+            <input type="number" name="episode" min="0" v-model="node.episode" class="text-center outline-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:border-blue-600 block w-full p-2.5 dark:bg-zinc-900 dark:border-zinc-800 dark:placeholder-gray-400 dark:text-white dark:focus:border-zinc-300">
             <input type="button" value="▶" @click="moveEpisode(node, true)" class="w-[60px] ml-2 text-gray-700 dark:text-white bg-zinc-100 hover:bg-zinc-200 outline-none font-medium rounded-md text-sm py-2.5 text-center dark:bg-zinc-800 dark:hover:bg-zinc-800/80" />
           </div>
           <div class="mt-4 flex">
@@ -114,10 +114,15 @@ onBeforeRouteUpdate((to, from, next) => {
   clear(new Locate(to.fullPath));
   next();
   load();
-})
+});
 
 </script>
 
 <style scoped>
 .anissia-node-hover-view-del:not(:hover) i { display: none }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 </style>
