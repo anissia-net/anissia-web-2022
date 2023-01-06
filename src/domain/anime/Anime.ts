@@ -14,7 +14,7 @@ export default class Anime {
     public time = '00:00';
     public twitter = '';
     public website = '';
-    public week = '0';
+    public week = '8';
     public captions: AnimeCaption[] = [];
 
     private _tags: string[] = [];
