@@ -36,9 +36,9 @@
 </template>
 
 <script setup lang="ts">
-import {computed, nextTick, onMounted, Ref, ref} from "vue";
+import {computed, nextTick, onMounted, onUpdated, Ref, ref} from "vue";
 import {Post} from "./Post";
-import {useRouter} from "vue-router";
+import {onBeforeRouteUpdate, useRouter} from "vue-router";
 import md from "../../common/md";
 import boardRemote from "./remote/boardRemote";
 import TextAreaSelector from "../../common/TextAreaSelector";
@@ -49,7 +49,7 @@ const props = defineProps({
   reload: Function
 });
 
-const post = ref(new Post()) as Ref<Post>;
+const post = computed(() => props.post) as Ref<Post>;
 const topic = ref('');
 const content = ref('');
 const contentHtml = computed(() => md.render(content.value));
@@ -211,9 +211,8 @@ function resizeHeight() {
 }
 
 function init() {
-  const p = post.value = props.post!!;
-  topic.value = p.topic;
-  content.value = p.content;
+  topic.value = post.value.topic;
+  content.value = post.value.content;
   contentElement.value.style.height = `${editorMinHeight}px`;
   previewElement.value.style.height = `${editorMinHeight}px`;
   resizeHeightSync();
@@ -222,6 +221,7 @@ function init() {
 onMounted(() => {
   init();
 });
+
 
 
 </script>

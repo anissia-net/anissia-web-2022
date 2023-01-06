@@ -94,7 +94,7 @@ const session = sessionStore();
 const user = computed(() => session.user);
 
 const newTopic = ref(Post.getNewTopic());
-const newPost = ref(Post.getNewPost(new Topic()));
+const newPost = ref(Post.getNewPost(new Topic())) as Ref<Post>;
 
 const loaded = ref(false);
 
