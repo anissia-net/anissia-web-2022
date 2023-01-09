@@ -146,7 +146,7 @@ const prevMembers = ref([
 ]) as unknown as SiteMember[];
 
 const siteHistory = ref([
-  new SiteHistory(`2023-01-09`, `서버교체`, `/notice?topicNo=105`),
+  new SiteHistory(`2023-01-09`, `서버교체`, `/notice?topicNo=109`),
   new SiteHistory(`2022-09-20`, `2022 디자인 리뉴얼 (개발:가리사니 개발자공간)`, `/notice?topicNo=93`),
   new SiteHistory(`2022-09-20`, `공유기 교체 (간헐적 서버 다운 원인)`, `/notice?topicNo=88`),
   new SiteHistory(`2021-02-08`, `2020 리뉴얼 (개발:가리사니 개발자공간)`, `/notice?topicNo=27`),
